@@ -1,8 +1,7 @@
 /**
  * Visually hides element from users
  */
-.visually-hidden,
-.sr-only {
+:is(.visually-hidden, .sr-only) {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -11,4 +10,15 @@
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+/* makes them focusable for keyboard navigation */
+:is(.visually-hidden-focusable, .sr-only-focusable):is(:active, :focus) {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
 }

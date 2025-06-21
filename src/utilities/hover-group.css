@@ -5,7 +5,7 @@
  */
 .hover-group {
   --hover-opacity: 0.4;
-  --hover-grow: 1.175;
+  --hover-grow: 1.05;
 }
 
 .hover-group > * {
@@ -23,4 +23,20 @@
   .hover-group > *:hover {
     transform: matrix(var(--hover-grow), 0, 0, var(--hover-grow), 0, 0);
   }
+}
+
+.--hover-grow-0 {
+  --hover-grow: 1;
+}
+
+.--hover-grow-1 {
+  --hover-grow: 1.05;
+}
+
+.--hover-grow-2 {
+  --hover-grow: 1.1;
+}
+
+.--hover-grow-3 {
+  --hover-grow: 1.15;
 }

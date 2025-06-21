@@ -12,10 +12,10 @@
 }
 /* helpers around the cross axis */
 .--start {
-  --layout-items: flex-start;
+  --layout-items: start;
 }
 .--end {
-  --layout-items: flex-end;
+  --layout-items: end;
 }
 .--center {
   --layout-items: center;

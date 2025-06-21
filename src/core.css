@@ -8,7 +8,6 @@
 /** layout */
 @import "layout/center.css" layer(layout);
 @import "layout/cluster.css" layer(layout);
-@import "layout/container.css" layer(layout);
 @import "layout/equal.css" layer(layout);
 @import "layout/flex.css" layer(layout);
 @import "layout/flow.css" layer(layout);
@@ -16,6 +15,7 @@
 @import "layout/pancake.css" layer(layout);
 @import "layout/pile.css" layer(layout);
 @import "layout/repel.css" layer(layout);
+@import "layout/scroll.css" layer(layout);
 @import "layout/sidebar.css" layer(layout);
 @import "layout/switcher.css" layer(layout);
 @import "layout/tiles.css" layer(layout);
@@ -24,13 +24,13 @@
 /** utilities */
 @import "utilities/aspect-ratio.css" layer(utilities);
 @import "utilities/click-area.css" layer(utilities);
+@import "utilities/container.css" layer(utilities);
 @import "utilities/counted.css" layer(utilities);
 @import "utilities/dimensions.css" layer(utilities);
 @import "utilities/hover-group.css" layer(utilities);
 @import "utilities/indexed.css" layer(utilities);
 @import "utilities/margin.css" layer(utilities);
 @import "utilities/no-print.css" layer(utilities);
-@import "utilities/scroll.css" layer(utilities);
 @import "utilities/typography.css" layer(utilities);
 @import "utilities/visually-hidden.css" layer(utilities);
 @import "utilities/z-index.css" layer(utilities);

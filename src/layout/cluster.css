@@ -7,7 +7,7 @@ determines how many items can be on a single row (e.g. tag cloud)
 .cluster {
   --layout-gap: 0;
   --layout-items: center;
-  --layout-justify: flex-start;
+  --layout-justify: start;
 
   display: flex;
   flex-wrap: wrap;

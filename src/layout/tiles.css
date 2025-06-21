@@ -11,13 +11,13 @@
   --tiles-repeat: auto-fill;
 
   display: grid;
+  gap: var(--layout-gap);
   grid-template-columns: repeat(
     var(--tiles-repeat),
     minmax(min(var(--layout-threshold), 100%), 1fr)
   );
-  gap: var(--layout-gap);
-}
 
-.--fit {
-  --tiles-repeat: auto-fit;
+  &.--fit {
+    --tiles-repeat: auto-fit;
+  }
 }

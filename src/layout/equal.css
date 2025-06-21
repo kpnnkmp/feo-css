@@ -6,7 +6,7 @@
 .equal {
   --layout-gap: 0;
   --layout-items: stretch;
-  --layout-justify: flex-start;
+  --layout-justify: start;
 
   --layout-direction: row;
 
@@ -17,8 +17,8 @@
   justify-content: var(--layout-justify);
   gap: var(--layout-gap);
   width: 100%;
-}
 
-.equal > * {
-  flex: 1 1 0px;
+  & > * {
+    flex: 1 1 0px;
+  }
 }

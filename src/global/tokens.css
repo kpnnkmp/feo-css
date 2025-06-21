@@ -1,4 +1,6 @@
 :root {
+  color-scheme: light;
+
   /**
    * BREAK POINTS
    */
@@ -38,4 +40,10 @@
   --sans-serif:
     system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
 }

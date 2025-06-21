@@ -1,0 +1,17 @@
+.scroll {
+  display: block;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll.--snappable {
+  scroll-snap-type: x mandatory;
+
+  & > * {
+    scroll-snap-align: var(--layout-items, center);
+    /* Prevents scrolling past more than one child */
+    scroll-snap-stop: always;
+  }
+}

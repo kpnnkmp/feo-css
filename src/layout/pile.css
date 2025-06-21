@@ -4,9 +4,9 @@
 .pile {
   display: grid;
   grid: [pile] minmax(0, 1fr) / [pile] minmax(0, 1fr);
-  place-items: center;
-}
+  place-items: var(--layout-items, center);
 
-.pile > * {
-  grid-area: pile;
+  & > * {
+    grid-area: pile;
+  }
 }

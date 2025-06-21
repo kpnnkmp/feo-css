@@ -60,3 +60,67 @@ pre > code {
   /* fix for increased font-size safari iOS */
   -webkit-text-size-adjust: none;
 }
+
+/**
+ * FORMS
+ */
+form input:not([type="checkbox"]),
+form select,
+form textarea {
+  width: 100%;
+  padding: calc(0.375 * var(--token-size-0)) var(--token-size-000);
+  background-color: white;
+  font-size: var(--token-size-00);
+  border: 1px solid black;
+  border-radius: calc(0.25 * var(--token-size-0));
+  transition: all 100ms;
+  color: black;
+}
+
+form textarea {
+  min-height: 8em;
+}
+
+form select {
+  --arrow-icon: url("data:image/svg+xml,%3Csvg width='14' height='9' viewBox='0 0 14 9' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cpath id='Path' fill='%232B3A50' d='M7 9L13.0622 0H0.937822L7 9Z'/%3E%3C/svg%3E");
+
+  appearance: none;
+  display: block;
+  background-image: var(--arrow-icon);
+  background-repeat: no-repeat, repeat;
+  background-position:
+    right var(--token-size-000) top 50%,
+    0 0;
+  background-size:
+    0.8em auto,
+    100%;
+}
+
+form input:not(:disabled):not([type="checkbox"]):where(:hover, :focus),
+form select:not(:disabled):where(:hover, :focus),
+form textarea:not(:disabled):where(:hover, :focus) {
+  border: 1px solid rebeccapurple;
+  outline: 1px solid rebeccapurple;
+}
+
+/**
+ * TABLES
+ */
+
+table {
+  /* Table fills always the available space */
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: calc(var(--token-size-0) * 0.375 * 1.3);
+}
+
+td,
+th {
+  text-align: left;
+  padding: calc(0.25 * var(--token-size-0));
+}
+
+th {
+  background: black;
+  color: white;
+}

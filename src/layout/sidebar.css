@@ -14,7 +14,7 @@
   --layout-gap: 0;
   --layout-threshold: 0;
   --layout-items: stretch;
-  --layout-justify: flex-start;
+  --layout-justify: start;
 
   --layout-inline-size: 60%;
 
@@ -23,20 +23,20 @@
   gap: var(--layout-gap);
   align-items: var(--layout-items);
   justify-content: var(--layout-justify);
-}
 
-.sidebar > * {
-  flex-basis: var(--layout-threshold);
-  flex-grow: 1;
-  min-width: min(100%, var(--layout-threshold));
-}
+  & > * {
+    flex-basis: var(--layout-threshold);
+    flex-grow: 1;
+    min-width: min(100%, var(--layout-threshold));
+  }
 
-.sidebar.--left > :last-child,
-.sidebar.--right > :first-child {
-  flex-basis: 0;
-  flex-grow: 999;
+  &.--left > :last-child,
+  &.--right > :first-child {
+    flex-basis: 0;
+    flex-grow: 999;
 
-  /* wraps when content becomes less than X */
-  /* similar to min-width in horizontal reading direction */
-  min-inline-size: var(--layout-inline-size);
+    /* wraps when content becomes less than X */
+    /* similar to min-width in horizontal reading direction */
+    min-inline-size: var(--layout-inline-size);
+  }
 }

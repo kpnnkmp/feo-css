@@ -3,14 +3,14 @@
 
 .click-area {
   position: relative;
-}
 
-.click-area a {
-  cursor: pointer;
-}
+  & a {
+    cursor: pointer;
 
-.click-area a::after {
-  position: absolute;
-  inset: 0;
-  content: "";
+    &::after {
+      position: absolute;
+      inset: 0;
+      content: "";
+    }
+  }
 }

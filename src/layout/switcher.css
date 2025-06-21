@@ -12,7 +12,7 @@
   --layout-threshold: 0;
   --layout-direction: row;
   --layout-items: stretch;
-  --layout-justify: flex-start;
+  --layout-justify: start;
 
   display: flex;
   flex-direction: var(--layout-direction);
@@ -20,21 +20,21 @@
   gap: var(--layout-gap);
   align-items: var(--layout-items);
   justify-content: var(--layout-justify);
-}
 
-.switcher > * {
-  flex-grow: 1;
-  flex-basis: calc((var(--layout-threshold) - 100%) * 999);
-}
+  & > * {
+    flex-grow: 1;
+    flex-basis: calc((var(--layout-threshold) - 100%) * 999);
+  }
 
-.switcher.counted > * {
-  flex-basis: calc((var(--count) * var(--layout-threshold) - 100%) * 999);
-}
+  &.--no-grow {
+    --layout-justify: center;
 
-.--no-grow {
-  justify-content: center;
-}
+    & > * {
+      flex-grow: 0;
+    }
+  }
 
-.--no-grow > * {
-  flex-grow: 0;
+  &.counted > * {
+    flex-basis: calc((var(--count) * var(--layout-threshold) - 100%) * 999);
+  }
 }
