@@ -6,37 +6,36 @@
 .hover-group {
   --hover-opacity: 0.4;
   --hover-grow: 1.05;
-}
 
-.hover-group > * {
-  transition: all 0.25s;
-}
-
-/** check if hover is available or not, is not available on mobile */
-@media (hover: hover) {
-  .hover-group:hover > *:not(:hover),
-  .hover-group:hover > *:not(:hover)::before,
-  .hover-group:hover > *:not(:hover)::after {
-    opacity: var(--hover-opacity);
+  > * {
+    transition: opacity 0.25s;
   }
 
-  .hover-group > *:hover {
-    transform: matrix(var(--hover-grow), 0, 0, var(--hover-grow), 0, 0);
+  @media (hover: hover) {
+    &:hover > *:not(:hover),
+    &:hover > *:not(:hover)::before,
+    &:hover > *:not(:hover)::after {
+      opacity: var(--hover-opacity);
+    }
+
+    & > *:hover {
+      transform: matrix(var(--hover-grow), 0, 0, var(--hover-grow), 0, 0);
+    }
   }
-}
 
-.--hover-grow-0 {
-  --hover-grow: 1;
-}
+  &.--hover-grow-0 {
+    --hover-grow: 1;
+  }
 
-.--hover-grow-1 {
-  --hover-grow: 1.05;
-}
+  &.--hover-grow-1 {
+    --hover-grow: 1.05;
+  }
 
-.--hover-grow-2 {
-  --hover-grow: 1.1;
-}
+  &.--hover-grow-2 {
+    --hover-grow: 1.1;
+  }
 
-.--hover-grow-3 {
-  --hover-grow: 1.15;
+  &.--hover-grow-3 {
+    --hover-grow: 1.15;
+  }
 }

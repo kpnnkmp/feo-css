@@ -1,52 +1,106 @@
-/* Themes */
 :root {
+  /* neutral colors */
+  --token-neutral-0: hsl(215, 12%, 12%);
+  --token-neutral-1: hsl(215, 12%, 22%);
+  --token-neutral-2: hsl(215, 12%, 36%);
+  --token-neutral-3: hsl(215, 24%, 78%);
+  --token-neutral-4: hsl(215, 24%, 92%);
+  --token-neutral-5: hsl(215, 24%, 98%);
+  /* brand colors */
   --brand-0: #1c756a;
   --brand-1: #f2b25a;
-  --primary: var(--brand-0);
+  /* theme */
+
+  --primary-00: hsl(from var(--brand-0) h s 95);
+  --primary-0: var(--brand-0);
+
+  --text-0: var(--token-neutral-0);
+  --text-1: var(--token-neutral-1);
+  --text-2: var(--token-neutral-2);
+  --surface-0: var(--token-neutral-5);
+  --surface-1: var(--token-neutral-4);
+  --surface-2: var(--token-neutral-3);
+  /* others */
+  --token-shadow:
+    0 1px 1px hsl(0deg 0% 0% / 0.075), 0 3px 3px hsl(0deg 0% 0% / 0.075),
+    0 6px 6px hsl(0deg 0% 0% / 0.075);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary: var(--brand-1);
+    --primary-00: hsl(from var(--brand-1) h s 10);
+    --primary-0: var(--brand-1);
+    --text-0: var(--token-neutral-5);
+    --text-1: var(--token-neutral-4);
+    --text-2: var(--token-neutral-3);
+    --surface-0: var(--token-neutral-0);
+    --surface-1: var(--token-neutral-1);
+    --surface-2: var(--token-neutral-2);
   }
 }
 
 /* Global styles */
 body {
+  --body-padding: var(--token-size-000);
   position: relative;
   color: var(--text-0);
-  background-color: var(--surface-0);
+  background-color: var(--surface-1);
+  padding: var(--body-padding);
+}
+::selection {
+  color: var(--surface-0) !important;
+  background: var(--text-0) !important;
 }
 a {
   transition: all 200ms;
-  color: var(--primary);
+  color: var(--primary-0);
 }
+/* code blocks */
 pre {
   background-color: var(--surface-1);
-  border: 2px solid var(--surface-2);
+  border: 2px solid var(--text-2);
 }
-
+:not(pre) > code {
+  color: var(--primary-0);
+}
+/* Basic table styling */
+th {
+  background: var(--text-2);
+  color: var(--surface-0);
+}
+th:first-child {
+  border-top-left-radius: var(--token-size-000);
+  border-bottom-left-radius: var(--token-size-000);
+}
+th:last-child {
+  border-top-right-radius: var(--token-size-000);
+  border-bottom-right-radius: var(--token-size-000);
+}
 /* Structure */
 main {
   position: relative;
+  background: var(--surface-0);
+  padding: var(--token-size-2);
+  box-shadow: var(--token-shadow);
+  border-radius: var(--token-size-0);
 }
 article {
-  padding: var(--token-size-0);
   width: 100%;
-  max-width: 68ch;
+  max-width: 60ch;
 }
 footer {
   padding: var(--token-size-0);
 }
-
 /* Main navigation */
 nav {
-  background-color: var(--surface-1);
   padding: var(--token-size-0);
-  outline: 1px solid var(--primary);
   position: sticky;
-  top: 0;
-  height: 100vh;
+  top: var(--body-padding);
+  height: calc(100vh - 2 * var(--body-padding));
+}
+
+nav ul {
+  --hover-grow: 1;
 }
 nav a {
   text-decoration: none;
@@ -62,33 +116,53 @@ nav a[data-selected="true"] {
 nav li {
   white-space: nowrap;
 }
+/* Breadcrumbs */
+.breadcrumbs {
+  color: var(--text-2);
+  text-transform: uppercase;
+}
+.breadcrumbs .divider {
+  color: var(--surface-2);
+}
+.breadcrumbs li:last-child a {
+  text-decoration: none;
+}
+/* article styling */
+article h1 {
+  margin-block-start: var(--token-size-000);
+}
+/* Callouts */
+aside.callout {
+  background-color: var(--primary-00);
+  border-left: 5px solid var(--primary-0);
+  padding: var(--token-size-000);
+  display: flex;
+  flex-direction: column;
+  gap: var(--token-size-000);
+  font-size: var(--token-size-00);
+  border-top-right-radius: var(--token-size-00);
+  border-bottom-right-radius: var(--token-size-00);
+}
+
+aside.callout .title {
+  color: var(--primary-0);
+  font-weight: bold;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--primary-0);
+}
 
 /* small changes for responsiveness */
-@media (max-width: 646px) {
+@media (max-width: 681px) {
   nav {
     position: initial;
     height: auto;
   }
-
   nav ul ul {
     display: none;
   }
   /* Overwrites scroll behavior and ensures growth in case main as little content */
   main {
     min-height: calc(100vh - 165px - var(--token-size-2));
+    padding: var(--token-size-0);
   }
-}
-
-/* Breadcrumbs */
-.breadcrumbs {
-  color: var(--text-2);
-  text-transform: uppercase;
-}
-
-.breadcrumbs .divider {
-  color: var(--surface-2);
-}
-
-.breadcrumbs li:last-child a {
-  text-decoration: none;
 }

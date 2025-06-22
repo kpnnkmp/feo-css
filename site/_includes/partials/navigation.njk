@@ -1,5 +1,5 @@
 <!-- NAVIGATION -->
-<ul role="list" class="switcher --threshold-00 --gap-000 | hover-group">
+<ul role="list" class="switcher --threshold-00 --gap-000 --no-grow | hover-group">
   {% for itemKey, item in collections.all | navigation %}
     <li>
       {% set selected = item | selected(itemKey, key) %}

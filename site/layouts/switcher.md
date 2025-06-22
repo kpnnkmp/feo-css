@@ -24,7 +24,7 @@ A _responsive_ layout pattern that helps switching the orientation from horizont
 
 ## API
 
-<div>
+<div class="x-scroll">
   <table>
     <thead>
       <tr><th>Custom property</th><th>Default</th><th>Description</th></tr>
@@ -39,7 +39,7 @@ A _responsive_ layout pattern that helps switching the orientation from horizont
 
 ## Utility classes
 
-<div>
+<div class="x-scroll">
   <table>
     <thead>
       <tr><th>Class name</th><th>Required?</th><th>Description</th></tr>
