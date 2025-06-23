@@ -15,20 +15,16 @@
 
   /**
    * SPACING & SIZING
+   * https://utopia.fyi/type/calculator?c=320,16,1.2,1240,20,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12
    */
-
-  /* Value between 0px and 5px, equal to 20% increase of 1rem */
-  --feo-scale: calc(5 * (min(100vw, 1240px) - 320px) / 920);
-
-  /* Scale of 1.333 */
-  --token-size-000: calc(0.65rem + 0.65 * var(--feo-scale));
-  --token-size-00: calc(0.8125rem + 0.8125 * var(--feo-scale));
-  --token-size-0: calc(1rem + var(--feo-scale));
-  --token-size-1: calc(1.33rem + 1.33 * var(--feo-scale));
-  --token-size-2: calc(1.78rem + 1.78 * var(--feo-scale));
-  --token-size-3: calc(2.37rem + 2.37 * var(--feo-scale));
-  --token-size-4: calc(3.16rem + 3.16 * var(--feo-scale));
-  --token-size-5: calc(4.21rem + 4.21 * var(--feo-scale));
+  --token-size-000: clamp(0.6944rem, 0.6913rem + 0.0157vw, 0.7035rem);
+  --token-size-00: clamp(0.8333rem, 0.797rem + 0.1816vw, 0.9377rem);
+  --token-size-0: clamp(1rem, 0.913rem + 0.4348vw, 1.25rem);
+  --token-size-1: clamp(1.2rem, 1.0378rem + 0.8109vw, 1.6663rem);
+  --token-size-2: clamp(1.44rem, 1.1683rem + 1.3585vw, 2.2211rem);
+  --token-size-3: clamp(1.728rem, 1.2992rem + 2.1439vw, 2.9607rem);
+  --token-size-4: clamp(2.0736rem, 1.4221rem + 3.2575vw, 3.9467rem);
+  --token-size-5: clamp(2.4883rem, 1.5239rem + 4.8219vw, 5.2609rem);
 
   /**
    * FONT FAMILY

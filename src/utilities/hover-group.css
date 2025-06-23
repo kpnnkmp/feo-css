@@ -3,12 +3,12 @@
  * add interactive elements on hover. partly hides non-hover elements and
  * enlarges hover element
  */
-.hover-group {
+[class*="hover-group"] {
   --hover-opacity: 0.4;
-  --hover-grow: 1.05;
+  --hover-grow: 1;
 
   > * {
-    transition: opacity 0.25s;
+    transition: all 0.25s;
   }
 
   @media (hover: hover) {
@@ -22,20 +22,8 @@
       transform: matrix(var(--hover-grow), 0, 0, var(--hover-grow), 0, 0);
     }
   }
+}
 
-  &.--hover-grow-0 {
-    --hover-grow: 1;
-  }
-
-  &.--hover-grow-1 {
-    --hover-grow: 1.05;
-  }
-
-  &.--hover-grow-2 {
-    --hover-grow: 1.1;
-  }
-
-  &.--hover-grow-3 {
-    --hover-grow: 1.15;
-  }
+.hover-group-grow {
+  --hover-grow: 1.175;
 }
