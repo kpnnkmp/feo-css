@@ -1,9 +1,18 @@
-/* max-width */
+/**
+ * DIMENSION UTILITIES
+ * Provides width, max-width, and height utilities
+ *
+ * Custom Properties:
+ * --max-width: Maximum width value for maxw-* classes
+ */
+
+/* Max-width utilities - sets width to 100% with customizable max-width constraint */
 [class*="maxw-"] {
   width: 100%;
   max-width: min(100%, var(--max-width, 100%));
 }
 
+/* Breakpoint-based max-width values */
 .maxw-000 {
   --max-width: var(--token-bp-000);
 }
@@ -35,11 +44,13 @@
 .maxw-5 {
   --max-width: var(--token-bp-5);
 }
-/* width */
+
+/* Width utilities */
 .w-full {
   width: 100%;
 }
-/* height */
+
+/* Height utilities */
 .h-full {
   height: 100%;
 }

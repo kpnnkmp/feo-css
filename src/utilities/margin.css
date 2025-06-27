@@ -1,3 +1,18 @@
+/**
+ * MARGIN UTILITIES
+ * Provides margin spacing utilities using design token values
+ *
+ * Classes:
+ * .m-* - All sides margin
+ * .mt-* - Top margin
+ * .mb-* - Bottom margin
+ * .ml-* - Left margin
+ * .mr-* - Right margin
+ *
+ * Sizes: 000, 00, 0, 1, 2, 3, 4, 5 (corresponds to --token-size-* values)
+ */
+
+/* All sides margin */
 .m-000 {
   margin: var(--token-size-000);
 }
@@ -22,6 +37,7 @@
 .m-5 {
   margin: var(--token-size-5);
 }
+/* Bottom margin */
 .mb-000 {
   margin-bottom: var(--token-size-000);
 }
@@ -46,6 +62,7 @@
 .mb-5 {
   margin-bottom: var(--token-size-5);
 }
+/* Top margin */
 .mt-000 {
   margin-top: var(--token-size-000);
 }
@@ -70,6 +87,7 @@
 .mt-5 {
   margin-top: var(--token-size-5);
 }
+/* Left margin */
 .ml-000 {
   margin-left: var(--token-size-000);
 }
@@ -94,6 +112,7 @@
 .ml-5 {
   margin-left: var(--token-size-5);
 }
+/* Right margin */
 .mr-000 {
   margin-right: var(--token-size-000);
 }

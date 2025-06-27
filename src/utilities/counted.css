@@ -1,3 +1,12 @@
+/**
+ * COUNTED UTILITY
+ * Automatically sets a CSS custom property with the number of direct children
+ *
+ * Custom Properties (read-only):
+ * --count: The number of direct children (1-10)
+ *
+ * Usage: Apply to a parent element to access child count via var(--count)
+ */
 .counted:has(> *:nth-child(1)) {
   --count: 1;
 }

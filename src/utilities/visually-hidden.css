@@ -1,5 +1,10 @@
 /**
- * Visually hides element from users
+ * VISUALLY HIDDEN UTILITY
+ * Hides elements visually while keeping them accessible to screen readers
+ *
+ * Classes:
+ * .visually-hidden, .sr-only - Hides element but keeps it in accessibility tree
+ * .visually-hidden-focusable, .sr-only-focusable - Shows hidden element when focused
  */
 :is(.visually-hidden, .sr-only) {
   position: absolute;
@@ -12,7 +17,7 @@
   border: 0;
 }
 
-/* makes them focusable for keyboard navigation */
+/* Shows visually hidden elements when they receive focus (keyboard navigation) */
 :is(.visually-hidden-focusable, .sr-only-focusable):is(:active, :focus) {
   clip: auto;
   height: auto;

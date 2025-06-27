@@ -1,3 +1,9 @@
+/**
+ * NO-PRINT UTILITY
+ * Hides elements when printing
+ *
+ * Usage: Apply to elements that should not appear in printed documents
+ */
 @media print {
   .no-print {
     display: none !important;

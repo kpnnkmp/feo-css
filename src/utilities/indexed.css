@@ -1,3 +1,12 @@
+/**
+ * INDEXED UTILITY
+ * Automatically assigns index numbers to direct children as CSS custom properties
+ *
+ * Custom Properties (read-only):
+ * --index: The child's position number (1-10)
+ *
+ * Usage: Apply to a parent element, then access child indices via var(--index)
+ */
 .indexed > *:nth-child(1) {
   --index: 1;
 }

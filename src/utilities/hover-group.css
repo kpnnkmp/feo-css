@@ -1,7 +1,10 @@
 /**
- * HOVER GROUP
- * add interactive elements on hover. partly hides non-hover elements and
- * enlarges hover element
+ * HOVER GROUP UTILITY
+ * Creates interactive hover effects where non-hovered siblings fade out and hovered elements can scale up
+ *
+ * Custom Properties:
+ * --hover-opacity: Opacity for non-hovered siblings (default: 0.4)
+ * --hover-grow: Scale factor for hovered elements (default: 1, no scaling)
  */
 [class*="hover-group"] {
   --hover-opacity: 0.4;
@@ -11,19 +14,23 @@
     transition: all 0.25s;
   }
 
+  /* Only applies hover effects on devices that support hover */
   @media (hover: hover) {
+    /* Fade out non-hovered siblings and their pseudo-elements */
     &:hover > *:not(:hover),
     &:hover > *:not(:hover)::before,
     &:hover > *:not(:hover)::after {
       opacity: var(--hover-opacity);
     }
 
+    /* Scale up the hovered element */
     & > *:hover {
       transform: matrix(var(--hover-grow), 0, 0, var(--hover-grow), 0, 0);
     }
   }
 }
 
+/* Preset for moderate growth effect */
 .hover-group-grow {
   --hover-grow: 1.175;
 }

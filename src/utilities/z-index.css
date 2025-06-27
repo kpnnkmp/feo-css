@@ -1,3 +1,10 @@
+/**
+ * Z-INDEX UTILITY
+ * Provides a high z-index value to ensure elements appear above other content
+ *
+ * Usage: Apply to elements that need to be positioned above all other content
+ * Note: Uses calc(infinity) which resolves to a very high number in most browsers
+ */
 .z-indexed {
   z-index: calc(infinity);
 }

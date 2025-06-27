@@ -1,8 +1,15 @@
+/**
+ * CONTAINER UTILITY
+ * Creates a CSS container query context for responsive design
+ *
+ * Custom Properties:
+ * --container-name: The container name for queries (default: layoutContainer)
+ */
 .container {
   --container-name: layoutContainer;
 
   container-name: var(--container-name);
   container-type: inline-size;
-  /* hack to resolve overflow when no wrapping is on */
+  /* Prevents overflow issues when content doesn't wrap */
   min-width: 0;
 }
