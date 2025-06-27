@@ -7,22 +7,22 @@
 
 /* Remove all default margin/border styles of the "User-Agent-Stylesheet" */
 *:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
-  margin: 0;
   border: 0;
+  margin: 0;
 }
 
 html {
   height: 100%;
+  /* iOS webkit fix */
+  height: -webkit-fill-available;
+  /* as WCAG dictates scroll in only one direction */
+  overflow-x: hidden;
   /* avoid scaling on mobile */
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
-  /* iOS webkit fix */
-  height: -webkit-fill-available;
   /* allow of transitions on height */
   interpolate-size: allow-keywords;
-  /* as WCAG dictates scroll in only one direction */
-  overflow-x: hidden;
   /* Enables keyword animations, like view-transitions  */
   @supports (interpolate-size: allow-keywords) {
     @media (prefers-reduced-motion: no-preference) {
@@ -72,8 +72,8 @@ p {
 
 /* Baseline for default links */
 a:not([class]) {
-  text-decoration-skip-ink: auto;
   color: currentColor;
+  text-decoration-skip-ink: auto;
   text-underline-offset: 0.125em;
 }
 /* slight transparent border in the current color */
@@ -158,9 +158,9 @@ body:has(dialog[open]) {
   *,
   *::before,
   *::after {
-    transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }

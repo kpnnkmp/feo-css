@@ -1,6 +1,4 @@
 :root {
-  color-scheme: light;
-
   /**
    * BREAK POINTS
    */
@@ -12,6 +10,17 @@
   --token-bp-3: calc(var(--token-bp-2) * 1.33);
   --token-bp-4: calc(var(--token-bp-3) * 1.33);
   --token-bp-5: calc(var(--token-bp-4) * 1.33);
+
+  /**
+   * FONT FAMILY
+   */
+  --monospace:
+    ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
+    "DejaVu Sans Mono", monospace;
+  --sans-serif:
+    system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
 
   /**
    * SPACING & SIZING
@@ -26,16 +35,7 @@
   --token-size-4: clamp(2.0736rem, 1.4221rem + 3.2575vw, 3.9467rem);
   --token-size-5: clamp(2.4883rem, 1.5239rem + 4.8219vw, 5.2609rem);
 
-  /**
-   * FONT FAMILY
-   */
-  --monospace:
-    ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
-    "DejaVu Sans Mono", monospace;
-  --serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
-  --sans-serif:
-    system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
