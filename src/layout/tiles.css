@@ -14,8 +14,8 @@
  * Usage: Tiles automatically wrap to new rows and adjust column count based on available space
  */
 .tiles {
-  --layout-threshold: 0;
   --layout-gap: 0;
+  --layout-threshold: 0;
   --tiles-repeat: auto-fill;
 
   display: grid;

@@ -14,8 +14,8 @@
   --layout-gap: 0;
 
   display: grid;
-  grid-template-columns: repeat(var(--layout-amount), minmax(0, 1fr));
   gap: var(--layout-gap);
+  grid-template-columns: repeat(var(--layout-amount), minmax(0, 1fr));
 }
 .grid-3 {
   --layout-amount: 3;

@@ -12,9 +12,9 @@
  */
 .scroll {
   display: block;
+  width: 100%;
   overflow-x: auto;
   overscroll-behavior-x: contain;
-  width: 100%;
   -webkit-overflow-scrolling: touch;
 }
 

@@ -14,7 +14,7 @@
 
   display: flex;
   flex-wrap: wrap;
+  gap: var(--layout-gap);
   align-items: var(--layout-items);
   justify-content: var(--layout-justify);
-  gap: var(--layout-gap);
 }

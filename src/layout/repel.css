@@ -10,14 +10,14 @@
  * Usage: Creates a layout where items are pushed apart with equal space between them
  */
 .repel {
-  --layout-gap: 0;
   --layout-direction: row;
+  --layout-gap: 0;
   --layout-items: stretch;
 
   display: flex;
   flex-direction: var(--layout-direction);
   flex-wrap: wrap;
+  gap: var(--layout-gap);
   align-items: var(--layout-items);
   justify-content: space-between;
-  gap: var(--layout-gap);
 }

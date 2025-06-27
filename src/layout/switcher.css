@@ -18,11 +18,11 @@
  */
 
 .switcher {
-  --layout-gap: 0;
-  --layout-threshold: 0;
   --layout-direction: row;
+  --layout-gap: 0;
   --layout-items: stretch;
   --layout-justify: start;
+  --layout-threshold: 0;
 
   display: flex;
   flex-direction: var(--layout-direction);

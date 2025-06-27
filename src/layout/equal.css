@@ -10,19 +10,18 @@
  */
 
 .equal {
+  --layout-direction: row;
   --layout-gap: 0;
   --layout-items: stretch;
   --layout-justify: start;
 
-  --layout-direction: row;
-
   display: flex;
   flex-direction: var(--layout-direction);
   flex-wrap: nowrap;
+  width: 100%;
+  gap: var(--layout-gap);
   align-items: var(--layout-items);
   justify-content: var(--layout-justify);
-  gap: var(--layout-gap);
-  width: 100%;
 
   & > * {
     flex: 1 1 0px;

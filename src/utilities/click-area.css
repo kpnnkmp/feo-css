@@ -13,9 +13,9 @@
 
     /* Creates an invisible overlay that covers the entire parent container */
     &::after {
+      content: "";
       position: absolute;
       inset: 0;
-      content: "";
     }
   }
 }

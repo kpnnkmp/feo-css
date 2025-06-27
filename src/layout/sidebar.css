@@ -18,11 +18,10 @@
  */
 .sidebar {
   --layout-gap: 0;
-  --layout-threshold: 0;
+  --layout-inline-size: 60%;
   --layout-items: stretch;
   --layout-justify: start;
-
-  --layout-inline-size: 60%;
+  --layout-threshold: 0;
 
   display: flex;
   flex-wrap: wrap;

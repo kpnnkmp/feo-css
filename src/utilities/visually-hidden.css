@@ -10,20 +10,20 @@
   position: absolute;
   width: 1px;
   height: 1px;
-  padding: 0;
   margin: -1px;
+  padding: 0;
+  border: 0;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
-  border: 0;
 }
 
 /* Shows visually hidden elements when they receive focus (keyboard navigation) */
 :is(.visually-hidden-focusable, .sr-only-focusable):is(:active, :focus) {
-  clip: auto;
+  position: static;
+  width: auto;
   height: auto;
   margin: 0;
   overflow: visible;
-  position: static;
+  clip: auto;
   white-space: inherit;
-  width: auto;
 }

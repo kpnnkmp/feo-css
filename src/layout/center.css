@@ -18,8 +18,8 @@
 .center {
   --layout-threshold: 100%;
 
-  margin-inline: auto;
   width: 100%;
   /* Prevents side-scrollable elements from breaking the layout */
   max-width: min(100%, var(--layout-threshold));
+  margin-inline: auto;
 }

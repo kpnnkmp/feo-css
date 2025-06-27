@@ -70,17 +70,17 @@
   --line-count: 2;
 
   display: -webkit-box;
+  overflow: hidden;
   -webkit-line-clamp: var(--line-count);
   -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 /* Single-line text truncation with ellipsis */
 .ellipsis {
+  min-width: 0;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  min-width: 0;
 }
 
 /* Resets line-height to 1 */
