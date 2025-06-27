@@ -1,8 +1,13 @@
 /**
- * Layout to stretch items across the main axis and have the space in between
+ * REPEL LAYOUT
+ * Distributes items with space-between, pushing them to opposite ends of the container
  *
- * --layout-gap: sets gap between child elements
- * --layout-direction: sets the flex-direction
+ * Custom Properties:
+ * --layout-gap: Gap between child elements (default: 0)
+ * --layout-direction: Flex direction (default: row)
+ * --layout-items: Align items on cross axis (default: stretch)
+ *
+ * Usage: Creates a layout where items are pushed apart with equal space between them
  */
 .repel {
   --layout-gap: 0;

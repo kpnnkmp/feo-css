@@ -1,16 +1,23 @@
 /**
- *  Utility classes to control the shared --layout-X properties amongst the
- *  layout classes
+ * LAYOUT UTILITIES
+ * Modifier classes to control shared --layout-* custom properties across all layout components
+ *
+ * These utilities provide a consistent API for configuring:
+ * - Direction and alignment properties
+ * - Gap spacing using design tokens
+ * - Threshold values for responsive behavior
+ *
+ * Usage: Combine with layout classes (e.g., .flex.--column.--gap-2.--center)
  */
 
-/* Flex direction */
+/* DIRECTION UTILITIES - Controls --layout-direction */
 .--column {
   --layout-direction: column;
 }
 .--row {
   --layout-direction: row;
 }
-/* helpers around the cross axis */
+/* ALIGNMENT UTILITIES - Controls --layout-items (cross axis) */
 .--start {
   --layout-items: start;
 }
@@ -23,6 +30,7 @@
 .--stretch {
   --layout-items: stretch;
 }
+/* JUSTIFICATION UTILITIES - Controls --layout-justify (main axis) */
 .--justify-start {
   --layout-justify: start;
 }
@@ -38,7 +46,7 @@
 .--justify-around {
   --layout-justify: space-around;
 }
-/* Control the gap API */
+/* GAP UTILITIES - Controls --layout-gap using design tokens */
 .--gap-none {
   --layout-gap: none;
 }
@@ -66,7 +74,7 @@
 .--gap-5 {
   --layout-gap: var(--token-size-5);
 }
-/* Control the threshold API */
+/* THRESHOLD UTILITIES - Controls --layout-threshold using breakpoint tokens */
 .--threshold-000 {
   --layout-threshold: var(--token-bp-000);
 }

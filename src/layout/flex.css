@@ -1,9 +1,18 @@
 /**
- * Default flexbox utility classes to control layout
+ * FLEX LAYOUT
+ * Default flexbox utility with configurable properties and helper classes
  *
- * --layout-gap: set the gap between the child elements (horizontal & vertical)
- * --layout-direction: sets flex-direction
- * --layout-items: sets align-items
+ * Custom Properties:
+ * --layout-gap: Gap between child elements (default: 0)
+ * --layout-direction: Flex direction (default: row)
+ * --layout-items: Align items on cross axis (default: stretch)
+ * --layout-justify: Justify content on main axis (default: start)
+ *
+ * Helper Classes:
+ * .wrap - Enables flex-wrap
+ * .grow - Flex-grow: 1
+ * .no-shrink - Flex-shrink: 0
+ * .self-* - Individual align-self properties
  */
 .flex {
   --layout-gap: 0;
@@ -16,32 +25,32 @@
   align-items: var(--layout-items);
   justify-content: var(--layout-justify);
   gap: var(--layout-gap);
+}
 
-  &.wrap {
-    flex-wrap: wrap;
-  }
+.wrap {
+  flex-wrap: wrap;
+}
 
-  & > .grow {
-    flex-grow: 1;
-  }
+.grow {
+  flex-grow: 1;
+}
 
-  & > .no-shrink {
-    flex-shrink: 0;
-  }
+.no-shrink {
+  flex-shrink: 0;
+}
 
-  & > .self-start {
-    align-self: self-start;
-  }
+.self-start {
+  align-self: self-start;
+}
 
-  & > .self-center {
-    align-self: center;
-  }
+.self-center {
+  align-self: center;
+}
 
-  & > .self-stretch {
-    align-self: stretch;
-  }
+.self-stretch {
+  align-self: stretch;
+}
 
-  & > .self-end {
-    align-self: self-end;
-  }
+.self-end {
+  align-self: self-end;
 }

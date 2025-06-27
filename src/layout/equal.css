@@ -1,6 +1,12 @@
 /**
- * Makes a wrapper fill the available space
- * Makes all children equal size in the available space
+ * EQUAL LAYOUT
+ * Makes all children equal size within the available space
+ *
+ * Custom Properties:
+ * --layout-gap: Gap between child elements (default: 0)
+ * --layout-items: Align items on cross axis (default: stretch)
+ * --layout-justify: Justify content on main axis (default: start)
+ * --layout-direction: Flex direction (default: row)
  */
 
 .equal {

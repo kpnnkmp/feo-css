@@ -1,5 +1,12 @@
 /**
- * A stack of position items on top of eachother (depth)
+ * PILE LAYOUT
+ * Stacks elements on top of each other in the same grid area (layered depth effect)
+ *
+ * Custom Properties:
+ * --layout-items: Controls positioning of stacked items (default: center)
+ *
+ * Usage: All children are placed in the same grid cell, creating a pile effect
+ * Useful for overlays, layered content, or creating depth
  */
 .pile {
   display: grid;

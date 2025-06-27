@@ -1,8 +1,11 @@
 /**
- * Groups items in such a way that a 'cluster' is created that automatically
-determines how many items can be on a single row (e.g. tag cloud)
+ * CLUSTER LAYOUT
+ * Groups items that automatically wrap to create clusters (e.g. tag cloud, button groups)
  *
- * --layout-gap: set the gap between the child elements (horizontal & vertical)
+ * Custom Properties:
+ * --layout-gap: Gap between child elements (default: 0)
+ * --layout-items: Align items on cross axis (default: center)
+ * --layout-justify: Justify content on main axis (default: start)
  */
 .cluster {
   --layout-gap: 0;

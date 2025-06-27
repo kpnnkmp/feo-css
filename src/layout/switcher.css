@@ -1,10 +1,20 @@
 /**
- * A layout of X columns that switches from horizontal to vertical the moment
- * the width of parent becomes less than a set value.
+ * SWITCHER LAYOUT
+ * Multi-column layout that switches from horizontal to vertical when children become too narrow
+ * Uses a clever flexbox technique to automatically wrap based on child element min-width
  *
- * --layout-gap: set the gap between the child elements (horizontal & vertical)
- * --layout-threshold: the min-width of a single child elements
- * --layout-direction: sets flex-direction
+ * Custom Properties:
+ * --layout-gap: Gap between child elements (default: 0)
+ * --layout-threshold: Minimum width of each child element before wrapping (default: 0)
+ * --layout-direction: Flex direction (default: row)
+ * --layout-items: Align items on cross axis (default: stretch)
+ * --layout-justify: Justify content on main axis (default: start)
+ *
+ * Modifiers:
+ * .--no-grow - Prevents children from growing, centers them instead
+ * .counted - Works with .counted utility to calculate threshold based on child count
+ *
+ * Usage: Children will stack vertically when their calculated width falls below --layout-threshold
  */
 
 .switcher {

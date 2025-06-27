@@ -1,14 +1,20 @@
 /**
- * A responsive 2-column layout with one fixed width column, and one flexible
- * column. It switches from vertical to horizontal when the flexible column
- * becomes less than --content of the total (i.e. a bit more than
- * )
+ * SIDEBAR LAYOUT
+ * Responsive 2-column layout with one fixed-width column and one flexible column
+ * Automatically switches from horizontal to vertical layout based on content constraints
  *
- * --layout-gap: set the gap between the child elements (horizontal & vertical)
- * --layout-threshold: sets the absolute value of the fixed-width column
- * --layout-inline-size: the minimum size of the responsive column
+ * Custom Properties:
+ * --layout-gap: Gap between child elements (default: 0)
+ * --layout-threshold: Fixed width of the sidebar column (default: 0)
+ * --layout-inline-size: Minimum size of the flexible column before wrapping (default: 60%)
+ * --layout-items: Align items on cross axis (default: stretch)
+ * --layout-justify: Justify content on main axis (default: start)
  *
- * NOTE: use the --left and --right classes to set which column is the fixed bar
+ * Modifiers:
+ * .--left - Makes the first child the flexible column, second child the sidebar
+ * .--right - Makes the second child the flexible column, first child the sidebar
+ *
+ * Usage: Creates a responsive sidebar that gracefully collapses to vertical layout
  */
 .sidebar {
   --layout-gap: 0;
@@ -35,8 +41,7 @@
     flex-basis: 0;
     flex-grow: 999;
 
-    /* wraps when content becomes less than X */
-    /* similar to min-width in horizontal reading direction */
+    /* Wraps to vertical layout when flexible column becomes smaller than --layout-inline-size */
     min-inline-size: var(--layout-inline-size);
   }
 }

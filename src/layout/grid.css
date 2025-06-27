@@ -1,8 +1,13 @@
 /**
- * Default grid layout with equal columns.
+ * GRID LAYOUT
+ * Creates equal-width columns using CSS Grid with configurable column count
  *
- * --layout-gap: set the gap between the child elements (horizontal & vertical)
- * --layout-amount: sets a fixed number of columns
+ * Custom Properties:
+ * --layout-gap: Gap between child elements (default: 0)
+ * --layout-amount: Number of columns (default: 2)
+ *
+ * Classes:
+ * .grid-3, .grid-4, .grid-5, .grid-6 - Sets specific column counts
  */
 [class*="grid-"] {
   --layout-amount: 2;

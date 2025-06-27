@@ -1,3 +1,15 @@
+/**
+ * SCROLL LAYOUT
+ * Creates horizontal scrolling containers with optional snap behavior
+ *
+ * Custom Properties:
+ * --layout-items: Snap alignment for children when using --snappable (default: center)
+ *
+ * Modifiers:
+ * .--snappable - Enables scroll snap with mandatory snapping to each child
+ *
+ * Usage: Creates smooth horizontal scrolling with touch-friendly behavior
+ */
 .scroll {
   display: block;
   overflow-x: auto;

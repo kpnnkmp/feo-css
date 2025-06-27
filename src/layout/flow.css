@@ -1,22 +1,19 @@
 /**
- * Stack Layout Utility
- * -------------------
+ * FLOW LAYOUT
+ * Creates consistent vertical spacing between consecutive sibling elements
  * Originally inspired by: https://piccalil.li/blog/my-favourite-3-lines-of-css/
  *
- * The stack utility creates consistent vertical spacing between elements.
- * It follows the "lobotomized owl" selector pattern (* + *) to add
- * margin between consecutive sibling elements.
+ * Custom Properties:
+ * --layout-gap: Vertical spacing between elements (default: 1em)
  *
- * Usage:
- * <div class="stack">
- *   <p>First element</p>
+ * Usage: Uses the "lobotomized owl" selector (* + *) to add margin-top
+ * to all elements except the first child
+ *
+ * Example:
+ * <div class="flow">
+ *   <p>First element (no margin)</p>
  *   <p>Second element (gets margin-top)</p>
  *   <p>Third element (gets margin-top)</p>
- * </div>
- *
- * You can customize the gap by setting --layout-gap on the .stack element:
- * <div class="stack" style="--layout-gap: 2rem">
- *   ...
  * </div>
  */
 
