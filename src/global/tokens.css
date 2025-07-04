@@ -24,16 +24,16 @@
 
   /**
    * SPACING & SIZING
-   * https://utopia.fyi/type/calculator?c=320,16,1.2,1240,20,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12
+   * https://utopia.fyi/type/calculator/?c=320,16,1.2,1240,20,1.25,5,2,&s=0.75%7C0.5%7C0.25,1.5%7C2%7C3%7C4%7C6,s-l&g=s,l,xl,12
    */
-  --token-size-000: clamp(0.6944rem, 0.6913rem + 0.0157vw, 0.7035rem);
-  --token-size-00: clamp(0.8333rem, 0.797rem + 0.1816vw, 0.9377rem);
+  --token-size-000: clamp(0.6944rem, 0.6577rem + 0.1836vw, 0.8rem);
+  --token-size-00: clamp(0.8333rem, 0.7754rem + 0.2899vw, 1rem);
   --token-size-0: clamp(1rem, 0.913rem + 0.4348vw, 1.25rem);
-  --token-size-1: clamp(1.2rem, 1.0378rem + 0.8109vw, 1.6663rem);
-  --token-size-2: clamp(1.44rem, 1.1683rem + 1.3585vw, 2.2211rem);
-  --token-size-3: clamp(1.728rem, 1.2992rem + 2.1439vw, 2.9607rem);
-  --token-size-4: clamp(2.0736rem, 1.4221rem + 3.2575vw, 3.9467rem);
-  --token-size-5: clamp(2.4883rem, 1.5239rem + 4.8219vw, 5.2609rem);
+  --token-size-1: clamp(1.2rem, 1.0739rem + 0.6304vw, 1.5625rem);
+  --token-size-2: clamp(1.44rem, 1.2615rem + 0.8924vw, 1.9531rem);
+  --token-size-3: clamp(1.728rem, 1.4799rem + 1.2407vw, 2.4414rem);
+  --token-size-4: clamp(2.0736rem, 1.7334rem + 1.7011vw, 3.0518rem);
+  --token-size-5: clamp(2.4883rem, 2.027rem + 2.3067vw, 3.8147rem);
 
   color-scheme: light;
 }

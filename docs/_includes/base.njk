@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Feo.css - {{ title }}</title>
+    <meta name="robots" content="index,follow" />
+    <meta
+      name="description"
+      content="Feo.css is a classless css and layout library"
+    />
+    <meta name="keywords" content="CSS, layout, patterns, cube css">
+    <meta name="content" content="CSS, layout, patterns, cube css">
+    <meta name="property" content="CSS, layout, patterns, cube css">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light only" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#F7F9FB"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#0E131B"
+    />
+    <meta name="view-transition" content="same-origin" />
+    <link rel="stylesheet" href="/feo.min.css" />
+    <link rel="stylesheet" href="/demo.css" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+  </head>
+
+  <body class="sidebar --left --threshold-00 --gap-2">
+    <!-- SIDEBAR -->
+    <nav class="flex --column --gap-1 | self-start">
+      <div class="flex --column --center --gap-none">
+        {% include "svg/logo.svg" %}
+        <span class="size-00 italic">v{{ pkg.version }}</span>
+      </div>
+      {% include "partials/navigation.njk" %}
+    </nav>
+    <!-- CONTENT -->
+    <div>
+      <main class="flex --column --center">
+        <article class="flow">
+          <div class="repel --gap-0 --center | size-00 uppercase">
+            {% include "partials/breadcrumb.njk" %}
+            {% if github %}
+              <a href="https://github.com/kpnnkmp/feo-css/blob/main/src/{{parent}}/{{key}}.css" target="_blank" >
+                Source
+              </a>
+            {% endif %}
+          </div>
+          <h1>{{title}}</h1>
+          {{ content | safe }}
+
+            <div class="repel --gap-0 w-full mt-5 | size-00 uppercase">
+              {% set previousPost = collections.docs | getPreviousCollectionItem(page) %}
+              {% set nextPost = collections.docs | getNextCollectionItem(page) %}
+
+              {% if previousPost %}<a href="{{ previousPost.url }}">← {{ previousPost.data.parent }}: {{ previousPost.data.title }}</a>{% else %}<div></div>{% endif %}
+              {% if nextPost %}<a href="{{ nextPost.url }}">{{ nextPost.data.parent }}: {{ nextPost.data.title }} →</a>{% else %}<div></div>{% endif %}
+            </div>
+        </article>
+      </main>
+      {% include "partials/footer.njk" %}
+    </div>
+  </body>
+</html>

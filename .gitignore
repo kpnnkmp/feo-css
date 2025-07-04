@@ -9,4 +9,5 @@ node_modules
 *.min.css
 
 _site
+_docs
 yarn-error.log

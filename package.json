@@ -1,7 +1,7 @@
 {
   "dependencies": {},
   "scripts": {
-    "css:core": "lightningcss --bundle --minify --targets '> 0.5% and last 3 versions' src/core.css -o feo.min.css",
+    "css:core": "lightningcss --bundle --minify --targets '> 0.5% and last 3 versions' src/feo.css -o feo.min.css",
     "css:docs": "yarn css:core && copyfiles -f ./*.min.css public",
     "build": "yarn css:core",
     "start": "eleventy --serve & yarn css:docs & onchange 'src/**/*.css' -- yarn css:docs",

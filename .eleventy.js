@@ -1,6 +1,7 @@
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
-import * as filters from "./site/_config/filters.js";
-import * as shortcodes from "./site/_config/shortcodes.js";
+import * as filters from "./docs/_config/filters.js";
+import * as shortcodes from "./docs/_config/shortcodes.js";
+import * as collections from "./docs/_config/collections.js";
 
 export default async function (config) {
   config.addPassthroughCopy({ "./public/": "/" });
@@ -9,6 +10,10 @@ export default async function (config) {
   // filters
   Object.keys(filters).forEach((name) => {
     config.addFilter(name, filters[name]);
+  });
+  // collections
+  Object.keys(collections).forEach((name) => {
+    config.addCollection(name, collections[name]);
   });
   // shortcodes
   Object.keys(shortcodes).forEach((name) => {
@@ -20,8 +25,8 @@ export default async function (config) {
     dataTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
     dir: {
-      input: "site",
-      output: "_site",
+      input: "docs",
+      output: "_docs",
     },
   };
 }

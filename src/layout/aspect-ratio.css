@@ -1,0 +1,40 @@
+/**
+ * ASPECT RATIO UTILITIES
+ * Maintains consistent aspect ratios for elements
+ *
+ * Custom Properties:
+ * --ratio: The aspect ratio value (default: auto)
+ */
+.ratio {
+  --ratio: auto;
+
+  aspect-ratio: var(--ratio);
+}
+
+/* Ensures images and iframes fill the aspect ratio container */
+:is(img, iframe).ratio,
+.ratio > :is(img, iframe) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Square aspect ratio */
+.--1x1 {
+  --ratio: 1 / 1;
+}
+
+/* Widescreen aspect ratio */
+.--16x9 {
+  --ratio: 16 / 9;
+}
+
+/* Panoramic aspect ratio */
+.--2x1 {
+  --ratio: 2 / 1;
+}
+
+/* Traditional photo aspect ratio */
+.--3x2 {
+  --ratio: 3 / 2;
+}

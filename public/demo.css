@@ -68,14 +68,7 @@ th {
   background: var(--text-2);
   color: var(--surface-0);
 }
-th:first-child {
-  border-top-left-radius: var(--token-size-000);
-  border-bottom-left-radius: var(--token-size-000);
-}
-th:last-child {
-  border-top-right-radius: var(--token-size-000);
-  border-bottom-right-radius: var(--token-size-000);
-}
+
 /* Structure */
 main {
   position: relative;
