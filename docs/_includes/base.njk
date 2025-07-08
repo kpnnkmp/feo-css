@@ -31,39 +31,41 @@
   </head>
 
   <body class="sidebar --left --threshold-00 --gap-2">
-    <!-- SIDEBAR -->
-    <nav class="flex --column --gap-1 | self-start">
-      <div class="flex --column --center --gap-none">
-        {% include "svg/logo.svg" %}
-        <span class="size-00 italic">v{{ pkg.version }}</span>
-      </div>
-      {% include "partials/navigation.njk" %}
-    </nav>
-    <!-- CONTENT -->
-    <div>
-      <main class="flex --column --center">
-        <article class="flow">
-          <div class="repel --gap-0 --center | size-00 uppercase">
-            {% include "partials/breadcrumb.njk" %}
-            {% if github %}
-              <a href="https://github.com/kpnnkmp/feo-css/blob/main/src/{{parent}}/{{key}}.css" target="_blank" >
-                Source
-              </a>
-            {% endif %}
-          </div>
-          <h1>{{title}}</h1>
-          {{ content | safe }}
-
-            <div class="repel --gap-0 w-full mt-5 | size-00 uppercase">
-              {% set previousPost = collections.docs | getPreviousCollectionItem(page) %}
-              {% set nextPost = collections.docs | getNextCollectionItem(page) %}
-
-              {% if previousPost %}<a href="{{ previousPost.url }}">← {{ previousPost.data.parent }}: {{ previousPost.data.title }}</a>{% else %}<div></div>{% endif %}
-              {% if nextPost %}<a href="{{ nextPost.url }}">{{ nextPost.data.parent }}: {{ nextPost.data.title }} →</a>{% else %}<div></div>{% endif %}
+    <div class="sidebar --left --threshold-00 --gap-2">
+      <!-- SIDEBAR -->
+      <nav class="flex --column --gap-1 | self-start">
+        <div class="flex --column --center --gap-none">
+          {% include "svg/logo.svg" %}
+          <span class="size-00 italic">v{{ pkg.version }}</span>
+        </div>
+        {% include "partials/navigation.njk" %}
+      </nav>
+      <!-- CONTENT -->
+      <div>
+        <main class="flex --column --center">
+          <article class="flow">
+            <div class="repel --gap-0 --center | size-00 uppercase">
+              {% include "partials/breadcrumb.njk" %}
+              {% if github %}
+                <a href="https://github.com/kpnnkmp/feo-css/blob/main/src/{{parent}}/{{key}}.css" target="_blank" >
+                  Source
+                </a>
+              {% endif %}
             </div>
-        </article>
-      </main>
-      {% include "partials/footer.njk" %}
+            <h1>{{title}}</h1>
+            {{ content | safe }}
+
+              <div class="repel --gap-0 w-full mt-5 | size-00 uppercase">
+                {% set previousPost = collections.docs | getPreviousCollectionItem(page) %}
+                {% set nextPost = collections.docs | getNextCollectionItem(page) %}
+
+                {% if previousPost %}<a href="{{ previousPost.url }}">← {{ previousPost.data.parent }}: {{ previousPost.data.title }}</a>{% else %}<div></div>{% endif %}
+                {% if nextPost %}<a href="{{ nextPost.url }}">{{ nextPost.data.parent }}: {{ nextPost.data.title }} →</a>{% else %}<div></div>{% endif %}
+              </div>
+          </article>
+        </main>
+        {% include "partials/footer.njk" %}
+      </div>
     </div>
   </body>
 </html>
