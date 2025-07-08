@@ -1,11 +1,11 @@
 ---
 layout: base.njk
 title: Tokens
-order: 2
+order: 3
 key: tokens
 ---
 
-Feo.css offers a limited set of design tokens, implemented in [CSS Custom Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) (`--*`). These design tokens are used in the _layout_ layer of Feo.css. To align with modern CSS frameworks, class utilities exist that apply the the values of the design tokens to the API of the layout classes.
+Feo.css offers a limited set of design tokens, implemented in [CSS Custom Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) (`--*`). These design tokens are used in the _layout_ layer of Feo.css. To align with modern CSS frameworks, class utilities exist that apply the values of the design tokens to the API of the layout classes.
 
 {% include "partials/callout-naming.njk" %}## Sizing
 

@@ -30,17 +30,3 @@ Or install it via NPM using your package manager of choice. From here you can im
 npm install feo-css
 yarn add feo-css
 ```
-
-## Guiding principles
-
-- HTML first
-- Layout & class utilities
-- Opinionated
-- Utility-ready
-- Components
-
-The architecture of Feo.css follows the principles outlined [here](https://github.com/kpnnkmp/css-architecture).
-
-```
-@layer global, layout, components, utilities;
-```
