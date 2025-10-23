@@ -7,7 +7,9 @@ key: tokens
 
 Feo.css offers a limited set of design tokens, implemented in [CSS Custom Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) (`--*`). These design tokens are used in the _layout_ layer of Feo.css. To align with modern CSS frameworks, class utilities exist that apply the values of the design tokens to the API of the layout classes.
 
-{% include "partials/callout-naming.njk" %}## Sizing
+{% include "partials/callout-naming.njk" %}
+
+## Sizing
 
 Feo.css offers design tokens on _sizing_ that can be used for spacing (e.g. margin and padding), font-sizes, or anything you can think of. The values are based on a combination of a few key principles:
 

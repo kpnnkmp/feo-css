@@ -9,6 +9,7 @@
   /* brand colors */
   --brand-0: #1c756a;
   --brand-1: #f2b25a;
+  --brand-2: #939be6;
   /* theme */
 
   --primary-00: hsl(from var(--brand-0) h s 95);
@@ -24,6 +25,9 @@
   --token-shadow:
     0 1px 1px hsl(0deg 0% 0% / 0.075), 0 3px 3px hsl(0deg 0% 0% / 0.075),
     0 6px 6px hsl(0deg 0% 0% / 0.075);
+
+  --code-primary: var(--brand-0);
+  --code-secondary: hsl(from var(--brand-2) h s calc(l * 0.8));
 }
 
 @media (prefers-color-scheme: dark) {
@@ -36,6 +40,9 @@
     --surface-0: var(--token-neutral-0);
     --surface-1: var(--token-neutral-1);
     --surface-2: var(--token-neutral-2);
+
+    --code-primary: var(--brand-1);
+    --code-secondary: var(--brand-2);
   }
 }
 
@@ -158,4 +165,36 @@ aside.callout .title {
     min-height: calc(100vh - 165px - var(--token-size-2));
     padding: var(--token-size-0);
   }
+}
+
+/* SYNTAX */
+/** SYNTAX */
+.token.punctuation,
+.token.comment,
+.token.operator {
+  color: var(--text-2);
+  font-weight: 300;
+}
+
+/** SYNTAX */
+.token.keyword,
+.token.tag {
+  color: var(--text-2);
+}
+
+.token.attr-name,
+.token.selector {
+  color: var(--code-primary);
+}
+
+.token.string,
+.token.number,
+.token.attr-value {
+  color: var(--code-secondary);
+}
+
+.token.function,
+.token.comment,
+.token.keyword {
+  font-style: italic;
 }
