@@ -12,12 +12,15 @@
   "main": "feo.css",
   "type": "module",
   "description": "A tiny CSS framework",
-  "repository": "https://github.com/kpnnkmp/feo-css.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kpnnkmp/feo-css.git"
+  },
   "keywords": [
     "cube css",
     "css"
   ],
-  "author": "Kevin Pennekamp <kevin@crinkles.dev>",
+  "author": "Kevin Pennekamp <kevin@interrupted.dev>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kpnnkmp/feo-css/issues"

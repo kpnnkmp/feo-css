@@ -15,9 +15,8 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - name: yarn publish
         run: |
-          yarn config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
           yarn install
           yarn build
-          npm publish --access public --tag beta
+          yarn publish --access public --tag beta
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTOMATION_TOKEN }}
