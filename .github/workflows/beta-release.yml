@@ -18,5 +18,3 @@ jobs:
           yarn install
           yarn build
           yarn publish --access public --tag beta
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTOMATION_TOKEN }}
