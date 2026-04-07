@@ -4,17 +4,20 @@ on:
   release:
     types: [prereleased]
 
+permissions:
+  id-token: write # Required for OIDC
+  contents: read
+
 jobs:
-  publish-npm:
+  publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
         with:
-          node-version: 22
-          registry-url: https://registry.npmjs.org/
-      - name: yarn publish
-        run: |
-          yarn install
-          yarn build
-          yarn publish --access public --tag beta
+          node-version: "24"
+          registry-url: "https://registry.npmjs.org"
+      - run: yarn install
+      - run: yarn build
+      - run: yarn publish --tag beta
