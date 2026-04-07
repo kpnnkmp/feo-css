@@ -3,10 +3,10 @@
  */
 body {
   position: relative;
-  min-width: var(--token-bp-0);
+  min-width: var(--p-bp-0);
   max-width: 100vw;
-  font-family: var(--sans-serif);
-  font-size: var(--token-size-0);
+  font-family: system-ui, sans-serif;
+  font-size: var(--p-size-0);
 }
 
 /**
@@ -17,20 +17,20 @@ body {
 }
 
 h1 {
-  font-size: var(--token-size-3);
+  font-size: var(--p-size-3);
 }
 h2 {
-  font-size: var(--token-size-2);
+  font-size: var(--p-size-2);
 }
 h3 {
-  font-size: var(--token-size-1);
+  font-size: var(--p-size-1);
 }
 
 /**
  * CODE
  */
 code {
-  font-family: var(--monospace);
+  font-family: ui-monospace, monospace;
   font-size: 0.85em;
   hyphens: none;
 }
@@ -53,7 +53,7 @@ pre {
 
 pre > code {
   display: block;
-  padding: var(--token-size-000) var(--token-size-00);
+  padding: var(--p-size-000) var(--p-size-00);
   overflow-x: auto;
   white-space: pre;
   tab-size: 2;
@@ -68,12 +68,12 @@ form input:not([type="checkbox"]),
 form select,
 form textarea {
   width: 100%;
-  padding: calc(0.375 * var(--token-size-0)) var(--token-size-000);
+  padding: calc(0.375 * var(--p-size-0)) var(--p-size-000);
   border: 1px solid black;
-  border-radius: calc(0.25 * var(--token-size-0));
+  border-radius: calc(0.25 * var(--p-size-0));
   background-color: white;
   color: black;
-  font-size: var(--token-size-00);
+  font-size: var(--p-size-00);
   transition: all 100ms;
 }
 
@@ -89,7 +89,7 @@ form select {
   background-image: var(--arrow-icon);
   background-repeat: no-repeat, repeat;
   background-position:
-    right var(--token-size-000) top 50%,
+    right var(--p-size-000) top 50%,
     0 0;
   background-size:
     0.8em auto,
@@ -111,12 +111,12 @@ table {
   /* Table fills always the available space */
   width: 100%;
   border-collapse: collapse;
-  border-radius: calc(var(--token-size-0) * 0.375 * 1.3);
+  border-radius: calc(var(--p-size-0) * 0.375 * 1.3);
 }
 
 td,
 th {
-  padding: calc(0.25 * var(--token-size-0));
+  padding: calc(0.25 * var(--p-size-0));
   text-align: left;
 }
 

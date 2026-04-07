@@ -29,42 +29,42 @@ Feo.css offers design tokens on _sizing_ that can be used for spacing (e.g. marg
     </thead>
     <tbody>
       <tr>
-        <td><code>--token-size-000</code></td>
+        <td><code>--p-size-000</code></td>
         <td>11.11px</td>
         <td>12.80px</td>
       </tr>
       <tr>
-        <td><code>--token-size-00</code></td>
+        <td><code>--p-size-00</code></td>
         <td>13.33px</td>
         <td>16.00px</td>
       </tr>
       <tr>
-        <td><code>--token-size-0</code></td>
+        <td><code>--p-size-0</code></td>
         <td>16.00px</td>
         <td>20.00px</td>
       </tr>
       <tr>
-        <td><code>--token-size-1</code></td>
+        <td><code>--p-size-1</code></td>
         <td>19.20px</td>
         <td>25.00px</td>
       </tr>
       <tr>
-        <td><code>--token-size-2</code></td>
+        <td><code>--p-size-2</code></td>
         <td>23.04px</td>
         <td>31.25px</td>
       </tr>
       <tr>
-        <td><code>--token-size-3</code></td>
+        <td><code>--p-size-3</code></td>
         <td>27.65px</td>
         <td>39.06px</td>
       </tr>
       <tr>
-        <td><code>--token-size-4</code></td>
+        <td><code>--p-size-4</code></td>
         <td>33.18px</td>
         <td>48.38px</td>
       </tr>
       <tr>
-        <td><code>--token-size-5</code></td>
+        <td><code>--p-size-5</code></td>
         <td>39.81px</td>
         <td>61.04px</td>
       </tr>
@@ -88,35 +88,35 @@ breaking. Scaling between the values is based on
     </thead>
     <tbody>
       <tr>
-        <td><code>--token-bp-000</code></td>
+        <td><code>--p-bp-000</code></td>
         <td>11.31rem</td>
       </tr>
       <tr>
-        <td><code>--token-bp-00</code></td>
+        <td><code>--p-bp-00</code></td>
         <td>15.04rem</td>
       </tr>
       <tr>
-        <td><code>--token-bp-0</code></td>
+        <td><code>--p-bp-0</code></td>
         <td>20rem</td>
       </tr>
       <tr>
-        <td><code>--token-bp-1</code></td>
+        <td><code>--p-bp-1</code></td>
         <td>20rem</td>
       </tr>
       <tr>
-        <td><code>--token-bp-2</code></td>
+        <td><code>--p-bp-2</code></td>
         <td>26.6rem</td>
       </tr>
       <tr>
-        <td><code>--token-bp-3</code></td>
+        <td><code>--p-bp-3</code></td>
         <td>35.38rem</td>
       </tr>
       <tr>
-        <td><code>--token-bp-4</code></td>
+        <td><code>--p-bp-4</code></td>
         <td>47.05rem</td>
       </tr>
       <tr>
-        <td><code>--token-bp-5</code></td>
+        <td><code>--p-bp-5</code></td>
         <td>62.58rem</td>
       </tr>
     </tbody>
@@ -127,13 +127,13 @@ breaking. Scaling between the values is based on
 
 The design tokens of Feo.css can be easily adjusted, like any other (global) CSS custom property. Extension of the design tokens is also possible, but requires a little more work than just adding new tokens.
 
-When you add new tokens to `--token-size-*`, you need to add the following classes as well, in the correct `@layer`:
+When you add new tokens to `--p-size-*`, you need to add the following classes as well, in the correct `@layer`:
 
 - `.--gap-*` in `layer(layout)` for controlling gaps in may layout classes.
 - `.m-*`, `.mt-*`, `.mb-*` , `.ml-*` and `.mr-*` in `layer(utilities)` for controlling margins.
 - `.size-*` in `layer(utilities)` to control font-sizes.
 
-If you add tokens to `--token-bp-*`, the following classes need to be adjusted.
+If you add tokens to `--p-bp-*`, the following classes need to be adjusted.
 
 - `.--threshold-*` in `layer(layout)` to control different aspects on dimensions of the layout container or children in layout classes.
 - `.--maxw-*` in `layer(utilities)` to control the `max-width` property.

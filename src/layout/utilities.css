@@ -51,51 +51,51 @@
   --layout-gap: none;
 }
 .--gap-000 {
-  --layout-gap: var(--token-size-000);
+  --layout-gap: var(--p-size-000);
 }
 .--gap-00 {
-  --layout-gap: var(--token-size-00);
+  --layout-gap: var(--p-size-00);
 }
 .--gap-0 {
-  --layout-gap: var(--token-size-0);
+  --layout-gap: var(--p-size-0);
 }
 .--gap-1 {
-  --layout-gap: var(--token-size-1);
+  --layout-gap: var(--p-size-1);
 }
 .--gap-2 {
-  --layout-gap: var(--token-size-2);
+  --layout-gap: var(--p-size-2);
 }
 .--gap-3 {
-  --layout-gap: var(--token-size-3);
+  --layout-gap: var(--p-size-3);
 }
 .--gap-4 {
-  --layout-gap: var(--token-size-4);
+  --layout-gap: var(--p-size-4);
 }
 .--gap-5 {
-  --layout-gap: var(--token-size-5);
+  --layout-gap: var(--p-size-5);
 }
 /* THRESHOLD UTILITIES - Controls --layout-threshold using breakpoint tokens */
 .--threshold-000 {
-  --layout-threshold: var(--token-bp-000);
+  --layout-threshold: var(--p-bp-000);
 }
 .--threshold-00 {
-  --layout-threshold: var(--token-bp-00);
+  --layout-threshold: var(--p-bp-00);
 }
 .--threshold-0 {
-  --layout-threshold: var(--token-bp-0);
+  --layout-threshold: var(--p-bp-0);
 }
 .--threshold-1 {
-  --layout-threshold: var(--token-bp-1);
+  --layout-threshold: var(--p-bp-1);
 }
 .--threshold-2 {
-  --layout-threshold: var(--token-bp-2);
+  --layout-threshold: var(--p-bp-2);
 }
 .--threshold-3 {
-  --layout-threshold: var(--token-bp-3);
+  --layout-threshold: var(--p-bp-3);
 }
 .--threshold-4 {
-  --layout-threshold: var(--token-bp-4);
+  --layout-threshold: var(--p-bp-4);
 }
 .--threshold-5 {
-  --layout-threshold: var(--token-bp-5);
+  --layout-threshold: var(--p-bp-5);
 }

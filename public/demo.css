@@ -1,11 +1,11 @@
 :root {
   /* neutral colors */
-  --token-neutral-0: hsl(215, 12%, 12%);
-  --token-neutral-1: hsl(215, 12%, 22%);
-  --token-neutral-2: hsl(215, 12%, 36%);
-  --token-neutral-3: hsl(215, 24%, 78%);
-  --token-neutral-4: hsl(215, 24%, 92%);
-  --token-neutral-5: hsl(215, 24%, 98%);
+  --p-neutral-0: hsl(215, 12%, 12%);
+  --p-neutral-1: hsl(215, 12%, 22%);
+  --p-neutral-2: hsl(215, 12%, 36%);
+  --p-neutral-3: hsl(215, 24%, 78%);
+  --p-neutral-4: hsl(215, 24%, 92%);
+  --p-neutral-5: hsl(215, 24%, 98%);
   /* brand colors */
   --brand-0: #1c756a;
   --brand-1: #f2b25a;
@@ -15,14 +15,14 @@
   --primary-00: hsl(from var(--brand-0) h s 95);
   --primary-0: var(--brand-0);
 
-  --text-0: var(--token-neutral-0);
-  --text-1: var(--token-neutral-1);
-  --text-2: var(--token-neutral-2);
-  --surface-0: var(--token-neutral-5);
-  --surface-1: var(--token-neutral-4);
-  --surface-2: var(--token-neutral-3);
+  --text-0: var(--p-neutral-0);
+  --text-1: var(--p-neutral-1);
+  --text-2: var(--p-neutral-2);
+  --surface-0: var(--p-neutral-5);
+  --surface-1: var(--p-neutral-4);
+  --surface-2: var(--p-neutral-3);
   /* others */
-  --token-shadow:
+  --p-shadow:
     0 1px 1px hsl(0deg 0% 0% / 0.075), 0 3px 3px hsl(0deg 0% 0% / 0.075),
     0 6px 6px hsl(0deg 0% 0% / 0.075);
 
@@ -34,12 +34,12 @@
   :root {
     --primary-00: hsl(from var(--brand-1) h s 10);
     --primary-0: var(--brand-1);
-    --text-0: var(--token-neutral-5);
-    --text-1: var(--token-neutral-4);
-    --text-2: var(--token-neutral-3);
-    --surface-0: var(--token-neutral-0);
-    --surface-1: var(--token-neutral-1);
-    --surface-2: var(--token-neutral-2);
+    --text-0: var(--p-neutral-5);
+    --text-1: var(--p-neutral-4);
+    --text-2: var(--p-neutral-3);
+    --surface-0: var(--p-neutral-0);
+    --surface-1: var(--p-neutral-1);
+    --surface-2: var(--p-neutral-2);
 
     --code-primary: var(--brand-1);
     --code-secondary: var(--brand-2);
@@ -48,7 +48,7 @@
 
 /* Global styles */
 body {
-  --body-padding: var(--token-size-000);
+  --body-padding: var(--p-size-000);
   position: relative;
   color: var(--text-0);
   background-color: var(--surface-1);
@@ -80,20 +80,20 @@ th {
 main {
   position: relative;
   background: var(--surface-0);
-  padding: var(--token-size-2);
-  box-shadow: var(--token-shadow);
-  border-radius: var(--token-size-0);
+  padding: var(--p-size-2);
+  box-shadow: var(--p-shadow);
+  border-radius: var(--p-size-0);
 }
 article {
   width: 100%;
   max-width: 60ch;
 }
 footer {
-  padding: var(--token-size-0);
+  padding: var(--p-size-0);
 }
 /* Main navigation */
 nav {
-  padding: var(--token-size-0);
+  padding: var(--p-size-0);
   position: sticky;
   top: var(--body-padding);
   height: calc(100vh - 2 * var(--body-padding));
@@ -129,19 +129,19 @@ nav li {
 }
 /* article styling */
 article h1 {
-  margin-block-start: var(--token-size-000);
+  margin-block-start: var(--p-size-000);
 }
 /* Callouts */
 aside.callout {
   background-color: var(--primary-00);
   border-left: 5px solid var(--primary-0);
-  padding: var(--token-size-000);
+  padding: var(--p-size-000);
   display: flex;
   flex-direction: column;
-  gap: var(--token-size-000);
-  font-size: var(--token-size-00);
-  border-top-right-radius: var(--token-size-00);
-  border-bottom-right-radius: var(--token-size-00);
+  gap: var(--p-size-000);
+  font-size: var(--p-size-00);
+  border-top-right-radius: var(--p-size-00);
+  border-bottom-right-radius: var(--p-size-00);
 }
 
 aside.callout .title {
@@ -162,8 +162,8 @@ aside.callout .title {
   }
   /* Overwrites scroll behavior and ensures growth in case main as little content */
   main {
-    min-height: calc(100vh - 165px - var(--token-size-2));
-    padding: var(--token-size-0);
+    min-height: calc(100vh - 165px - var(--p-size-2));
+    padding: var(--p-size-0);
   }
 }
 

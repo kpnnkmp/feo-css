@@ -8,28 +8,28 @@
 
 /** Font-sizes - Uses design token values */
 .size-000 {
-  font-size: var(--token-size-000);
+  font-size: var(--p-size-000);
 }
 .size-00 {
-  font-size: var(--token-size-00);
+  font-size: var(--p-size-00);
 }
 .size-0 {
-  font-size: var(--token-size-0);
+  font-size: var(--p-size-0);
 }
 .size-1 {
-  font-size: var(--token-size-1);
+  font-size: var(--p-size-1);
 }
 .size-2 {
-  font-size: var(--token-size-2);
+  font-size: var(--p-size-2);
 }
 .size-3 {
-  font-size: var(--token-size-3);
+  font-size: var(--p-size-3);
 }
 .size-4 {
-  font-size: var(--token-size-4);
+  font-size: var(--p-size-4);
 }
 .size-5 {
-  font-size: var(--token-size-5);
+  font-size: var(--p-size-5);
 }
 /** Font styles and weights */
 .bold {

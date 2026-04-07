@@ -1,8 +1,10 @@
-@layer global, layout, components, utilities;
+@layer tokens, global, layout, components, utilities;
+
+/** tokens */
+@import "tokens/primitives.css" layer(tokens);
 
 /** global */
 @import "global/reset.css" layer(global);
-@import "global/tokens.css" layer(global);
 @import "global/global.css" layer(global);
 
 /** layout */

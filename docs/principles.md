@@ -36,7 +36,7 @@ As you can see, on the implementation level, you go past the utility layer, twic
 
 Many classes have properties that are not the same in all scenarios. The `.switcher` example you want to be able to adjust the gap or the width that triggers the orientation change.
 
-You could add a class that alters that property. That is not the case for all APIs. The example `.switcher` pattern used before shows that `var(--token-bp-0)` is used in a calculation. The token is used in a child selector (`>`), not directly on `.switcher`. Another scenario is a token that is used for multiple properties.
+You could add a class that alters that property. That is not the case for all APIs. The example `.switcher` pattern used before shows that `var(--p-bp-0)` is used in a calculation. The token is used in a child selector (`>`), not directly on `.switcher`. Another scenario is a token that is used for multiple properties.
 
 _To avoid overwriting all these scenarios one by one, we define clear APIs through custom properties._
 
@@ -44,8 +44,8 @@ Let’s take the previous `.switcher` layout class as an example. Instead if dir
 
 ```css
 .switcher {
-  --layout-gap: var(--token-size-0);
-  --layout-width: var(--token-bp-0);
+  --layout-gap: var(--p-size-0);
+  --layout-width: var(--p-bp-0);
 }
 ```
 
