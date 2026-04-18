@@ -4,8 +4,7 @@
 @import "tokens/primitives.css" layer(tokens);
 
 /** global */
-@import "global/reset.css" layer(global);
-@import "global/global.css" layer(global);
+@import "reset.css" layer(global);
 
 /** layout */
 @import "layout/aspect-ratio.css" layer(layout);

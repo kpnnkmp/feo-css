@@ -1,49 +1,53 @@
 /* Box sizing rules */
-*,
-*::before,
-*::after {
+:where(*, *::before, *::after) {
   box-sizing: border-box;
 }
 
 /* Remove all default margin/border styles of the "User-Agent-Stylesheet" */
-*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
-  border: 0;
+:where(body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd) {
   margin: 0;
 }
 
-html {
-  height: 100%;
-  /* iOS webkit fix */
-  height: -webkit-fill-available;
+:where(html) {
   /* as WCAG dictates scroll in only one direction */
   overflow-x: hidden;
   /* avoid scaling on mobile */
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
-  /* allow of transitions on height */
-  interpolate-size: allow-keywords;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   /* Enables keyword animations, like view-transitions  */
   @supports (interpolate-size: allow-keywords) {
     @media (prefers-reduced-motion: no-preference) {
       interpolate-size: allow-keywords;
     }
   }
+
+  &:focus-within {
+    scroll-behavior: smooth;
+  }
 }
 
-/* Set core root defaults */
-html:focus-within {
-  scroll-behavior: smooth;
-}
-
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  /* iOS webkit fix */
-  min-height: -webkit-fill-available;
+:where(body) {
+  position: relative;
+  min-block-size: 100dvh;
+  min-width: var(--p-bp-0);
+  font-family: system-ui, sans-serif;
+  font-size: var(--p-size-0);
   line-height: 1.5;
   /* Improve text-rendering */
   -webkit-font-smoothing: antialiased;
+}
+
+:where(h1, h2, h3) {
+  font-weight: 600;
+}
+:where(h1) {
+  font-size: var(--p-size-3);
+}
+:where(h2) {
+  font-size: var(--p-size-2);
+}
+:where(h3) {
+  font-size: var(--p-size-1);
 }
 
 /* Remove list styles on ul, ol elements, if they have any other class */
@@ -71,26 +75,58 @@ p {
 }
 
 /* Baseline for default links */
-a:not([class]) {
+:where(a:not([class])) {
   color: currentColor;
   text-decoration-skip-ink: auto;
   text-underline-offset: 0.125em;
-}
-/* slight transparent border in the current color */
-a:not([class]):not(:is(:hover, :focus)) {
-  text-decoration-color: hsl(from currentColor h s l / 50%);
+
+  &:not(:is(:hover, :focus)) {
+    text-decoration-color: hsl(from currentColor h s l / 50%);
+  }
 }
 
-/* Make images easier to work with */
 :where(img, picture, svg) {
   display: block;
-  max-width: 100%;
+  inline-size: 100%;
+  max-inline-size: 100%;
+  block-size: auto;
 }
 
-/* default input style */
 :where(input, button, textarea, select) {
   font-family: inherit;
   font-size: inherit;
+}
+
+:where(code) {
+  font-family: ui-monospace, monospace;
+  font-size: 0.85em;
+  hyphens: none;
+}
+
+:where(:not(pre) > code) {
+  white-space: nowrap;
+  word-break: break-all;
+}
+
+:where(pre) {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  border-radius: 0.5em;
+  word-wrap: normal;
+  word-break: normal;
+  word-spacing: normal;
+
+  & > code {
+    display: block;
+    padding: var(--p-size-000) var(--p-size-00);
+    overflow-x: auto;
+    white-space: pre;
+    tab-size: 2;
+    /* fix for increased font-size safari iOS */
+    -webkit-text-size-adjust: 100%;
+  }
 }
 
 /* Anything that has been anchored to should have extra scroll margin */
@@ -126,6 +162,7 @@ a:not([class]):not(:is(:hover, :focus)) {
 [disabled] {
   cursor: not-allowed;
 }
+
 [disabled="false"] {
   cursor: pointer;
 }

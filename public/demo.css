@@ -49,31 +49,28 @@
 /* Global styles */
 body {
   --body-padding: var(--p-size-000);
-  position: relative;
+
   color: var(--text-0);
   background-color: var(--surface-1);
   padding: var(--body-padding);
 }
+
 ::selection {
   color: var(--surface-0) !important;
   background: var(--text-0) !important;
 }
+
 a {
   transition: all 200ms;
   color: var(--primary-0);
 }
+
 /* code blocks */
 pre {
   background-color: var(--surface-1);
-  border: 2px solid var(--text-2);
 }
 :not(pre) > code {
   color: var(--primary-0);
-}
-/* Basic table styling */
-th {
-  background: var(--text-2);
-  color: var(--surface-0);
 }
 
 /* Structure */
@@ -168,7 +165,6 @@ aside.callout .title {
 }
 
 /* SYNTAX */
-/** SYNTAX */
 .token.punctuation,
 .token.comment,
 .token.operator {
@@ -197,4 +193,22 @@ aside.callout .title {
 .token.comment,
 .token.keyword {
   font-style: italic;
+}
+
+table {
+  /* Table fills always the available space */
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: calc(var(--p-size-0) * 0.375 * 1.3);
+}
+
+td,
+th {
+  padding: calc(0.25 * var(--p-size-0));
+  text-align: left;
+}
+
+th {
+  background: var(--text-2);
+  color: var(--surface-0);
 }
