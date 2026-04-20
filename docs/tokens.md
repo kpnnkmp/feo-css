@@ -29,12 +29,12 @@ Feo.css offers design tokens on _sizing_ that can be used for spacing (e.g. marg
     </thead>
     <tbody>
       <tr>
-        <td><code>--p-size-000</code></td>
+        <td><code>--p-size--2</code></td>
         <td>11.11px</td>
         <td>12.80px</td>
       </tr>
       <tr>
-        <td><code>--p-size-00</code></td>
+        <td><code>--p-size--1</code></td>
         <td>13.33px</td>
         <td>16.00px</td>
       </tr>
@@ -88,11 +88,11 @@ breaking. Scaling between the values is based on
     </thead>
     <tbody>
       <tr>
-        <td><code>--p-bp-000</code></td>
+        <td><code>--p-bp--2</code></td>
         <td>11.31rem</td>
       </tr>
       <tr>
-        <td><code>--p-bp-00</code></td>
+        <td><code>--p-bp--1</code></td>
         <td>15.04rem</td>
       </tr>
       <tr>

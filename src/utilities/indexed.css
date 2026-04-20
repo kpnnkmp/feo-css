@@ -7,33 +7,35 @@
  *
  * Usage: Apply to a parent element, then access child indices via var(--index)
  */
-.indexed > *:nth-child(1) {
-  --index: 1;
-}
-.indexed > *:nth-child(2) {
-  --index: 2;
-}
-.indexed > *:nth-child(3) {
-  --index: 3;
-}
-.indexed > *:nth-child(4) {
-  --index: 4;
-}
-.indexed > *:nth-child(5) {
-  --index: 5;
-}
-.indexed > *:nth-child(6) {
-  --index: 6;
-}
-.indexed > *:nth-child(7) {
-  --index: 7;
-}
-.indexed > *:nth-child(8) {
-  --index: 8;
-}
-.indexed > *:nth-child(9) {
-  --index: 9;
-}
-.indexed > *:nth-child(10) {
-  --index: 10;
+.indexed {
+  & > *:nth-child(1) {
+    --index: 1;
+  }
+  & > *:nth-child(2) {
+    --index: 2;
+  }
+  & > *:nth-child(3) {
+    --index: 3;
+  }
+  & > *:nth-child(4) {
+    --index: 4;
+  }
+  & > *:nth-child(5) {
+    --index: 5;
+  }
+  & > *:nth-child(6) {
+    --index: 6;
+  }
+  & > *:nth-child(7) {
+    --index: 7;
+  }
+  & > *:nth-child(8) {
+    --index: 8;
+  }
+  & > *:nth-child(9) {
+    --index: 9;
+  }
+  & > *:nth-child(10) {
+    --index: 10;
+  }
 }

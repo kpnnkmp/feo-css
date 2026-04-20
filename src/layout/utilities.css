@@ -50,11 +50,14 @@
 .--gap-none {
   --layout-gap: none;
 }
-.--gap-000 {
-  --layout-gap: var(--p-size-000);
+.--gap--20 {
+  --layout-gap: var(--p-size--20);
 }
-.--gap-00 {
-  --layout-gap: var(--p-size-00);
+.--gap--2 {
+  --layout-gap: var(--p-size--2);
+}
+.--gap--1 {
+  --layout-gap: var(--p-size--1);
 }
 .--gap-0 {
   --layout-gap: var(--p-size-0);
@@ -75,11 +78,11 @@
   --layout-gap: var(--p-size-5);
 }
 /* THRESHOLD UTILITIES - Controls --layout-threshold using breakpoint tokens */
-.--threshold-000 {
-  --layout-threshold: var(--p-bp-000);
+.--threshold--2 {
+  --layout-threshold: var(--p-bp--2);
 }
-.--threshold-00 {
-  --layout-threshold: var(--p-bp-00);
+.--threshold--1 {
+  --layout-threshold: var(--p-bp--1);
 }
 .--threshold-0 {
   --layout-threshold: var(--p-bp-0);

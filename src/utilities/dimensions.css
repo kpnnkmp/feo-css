@@ -13,12 +13,12 @@
 }
 
 /* Breakpoint-based max-width values */
-.maxw-000 {
-  --max-width: var(--p-bp-000);
+.maxw--2 {
+  --max-width: var(--p-bp--2);
 }
 
-.maxw-00 {
-  --max-width: var(--p-bp-00);
+.maxw--1 {
+  --max-width: var(--p-bp--1);
 }
 
 .maxw-0 {

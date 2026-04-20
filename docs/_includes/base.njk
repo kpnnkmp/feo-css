@@ -30,13 +30,13 @@
     <link rel="icon" href="/favicon.ico" sizes="any" />
   </head>
 
-  <body class="sidebar --left --threshold-00 --gap-2">
-    <div class="sidebar --left --threshold-00 --gap-2">
+  <body class="sidebar --left --threshold--1 --gap-2">
+    <div class="sidebar --left --threshold--1 --gap-2">
       <!-- SIDEBAR -->
       <nav class="flex --column --gap-1 | self-start">
         <div class="flex --column --center --gap-none">
           {% include "svg/logo.svg" %}
-          <span class="size-00 italic">v{{ pkg.version }}</span>
+          <span class="size--1 italic">v{{ pkg.version }}</span>
         </div>
         {% include "partials/navigation.njk" %}
       </nav>
@@ -44,7 +44,7 @@
       <div class="flex --column">
         <main class="flex --column --center | grow">
           <article class="flow">
-            <div class="repel --gap-0 --center | size-00 uppercase">
+            <div class="repel --gap-0 --center | size--1 uppercase">
               {% include "partials/breadcrumb.njk" %}
               {% if github %}
                 <a href="https://github.com/kpnnkmp/feo-css/blob/main/src/{{parent}}/{{key}}.css" target="_blank" >
@@ -55,7 +55,7 @@
             <h1>{{title}}</h1>
             {{ content | safe }}
 
-              <div class="repel --gap-0 w-full mt-5 | size-00 uppercase">
+              <div class="repel --gap-0 w-full mt-5 | size--1 uppercase">
                 {% set previousPost = collections.docs | getPreviousCollectionItem(page) %}
                 {% set nextPost = collections.docs | getNextCollectionItem(page) %}
 

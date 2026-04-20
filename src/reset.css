@@ -9,16 +9,16 @@
 }
 
 :where(html) {
+  color-scheme: light dark;
   /* as WCAG dictates scroll in only one direction */
   overflow-x: hidden;
   /* avoid scaling on mobile */
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  hanging-punctuation: first allow-end last;
   /* Enables keyword animations, like view-transitions  */
-  @supports (interpolate-size: allow-keywords) {
-    @media (prefers-reduced-motion: no-preference) {
-      interpolate-size: allow-keywords;
-    }
+  @media (prefers-reduced-motion: no-preference) {
+    interpolate-size: allow-keywords;
   }
 
   &:focus-within {
@@ -120,7 +120,7 @@ p {
 
   & > code {
     display: block;
-    padding: var(--p-size-000) var(--p-size-00);
+    padding: var(--p-size--2) var(--p-size--1);
     overflow-x: auto;
     white-space: pre;
     tab-size: 2;

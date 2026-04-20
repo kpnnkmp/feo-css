@@ -29,8 +29,3 @@
     }
   }
 }
-
-/* Preset for moderate growth effect */
-.hover-group-grow {
-  --hover-grow: 1.175;
-}

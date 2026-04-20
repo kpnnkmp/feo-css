@@ -13,11 +13,11 @@
  */
 
 /* All sides margin */
-.m-000 {
-  margin: var(--p-size-000);
+.m--2 {
+  margin: var(--p-size--2);
 }
-.m-00 {
-  margin: var(--p-size-00);
+.m--1 {
+  margin: var(--p-size--1);
 }
 .m-0 {
   margin: var(--p-size-0);
@@ -38,11 +38,11 @@
   margin: var(--p-size-5);
 }
 /* Bottom margin */
-.mb-000 {
-  margin-bottom: var(--p-size-000);
+.mb--2 {
+  margin-bottom: var(--p-size--2);
 }
-.mb-00 {
-  margin-bottom: var(--p-size-00);
+.mb--1 {
+  margin-bottom: var(--p-size--1);
 }
 .mb-0 {
   margin-bottom: var(--p-size-0);
@@ -63,11 +63,11 @@
   margin-bottom: var(--p-size-5);
 }
 /* Top margin */
-.mt-000 {
-  margin-top: var(--p-size-000);
+.mt--2 {
+  margin-top: var(--p-size--2);
 }
-.mt-00 {
-  margin-top: var(--p-size-00);
+.mt--1 {
+  margin-top: var(--p-size--1);
 }
 .mt-0 {
   margin-top: var(--p-size-0);
@@ -88,11 +88,11 @@
   margin-top: var(--p-size-5);
 }
 /* Left margin */
-.ml-000 {
-  margin-left: var(--p-size-000);
+.ml--2 {
+  margin-left: var(--p-size--2);
 }
-.ml-00 {
-  margin-left: var(--p-size-00);
+.ml--1 {
+  margin-left: var(--p-size--1);
 }
 .ml-0 {
   margin-left: var(--p-size-0);
@@ -113,11 +113,11 @@
   margin-left: var(--p-size-5);
 }
 /* Right margin */
-.mr-000 {
-  margin-right: var(--p-size-000);
+.mr--2 {
+  margin-right: var(--p-size--2);
 }
-.mr-00 {
-  margin-right: var(--p-size-00);
+.mr--1 {
+  margin-right: var(--p-size--1);
 }
 .mr-0 {
   margin-right: var(--p-size-0);

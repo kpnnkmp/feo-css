@@ -1,28 +1,48 @@
 :root {
-  color-scheme: light dark;
-
-  /**
-   * BREAK POINTS
-   */
+  /** break-points (1.33 scale) */
+  --p-bp-scale: 1.33;
   --p-bp-0: 20rem;
-  --p-bp-000: calc(var(--p-bp-00) / 1.33);
-  --p-bp-00: calc(var(--p-bp-0) / 1.33);
-  --p-bp-1: calc(var(--p-bp-0) * 1.33);
-  --p-bp-2: calc(var(--p-bp-1) * 1.33);
-  --p-bp-3: calc(var(--p-bp-2) * 1.33);
-  --p-bp-4: calc(var(--p-bp-3) * 1.33);
-  --p-bp-5: calc(var(--p-bp-4) * 1.33);
+  --p-bp--2: calc(var(--p-bp-0) * pow(var(--p-bp-scale), -2));
+  --p-bp--1: calc(var(--p-bp-0) * pow(var(--p-bp-scale), -1));
+  --p-bp-1: calc(var(--p-bp-0) * pow(var(--p-bp-scale), 1));
+  --p-bp-2: calc(var(--p-bp-0) * pow(var(--p-bp-scale), 2));
+  --p-bp-3: calc(var(--p-bp-0) * pow(var(--p-bp-scale), 3));
+  --p-bp-4: calc(var(--p-bp-0) * pow(var(--p-bp-scale), 4));
+  --p-bp-5: calc(var(--p-bp-0) * pow(var(--p-bp-scale), 5));
 
-  /**
-   * SPACING & SIZING
-   * https://utopia.fyi/type/calculator?c=320,16,1.2,1240,21,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12
-   */
-  --p-size-000: clamp(0.6944rem, 0.6438rem + 0.2531vw, 0.84rem);
-  --p-size-00: clamp(0.8333rem, 0.758rem + 0.3768vw, 1.05rem);
+  /** spacing, font-size */
+  --p-size-scale: 1.25;
   --p-size-0: clamp(1rem, 0.8913rem + 0.5435vw, 1.3125rem);
-  --p-size-1: clamp(1.2rem, 1.0467rem + 0.7663vw, 1.6406rem);
-  --p-size-2: clamp(1.44rem, 1.2276rem + 1.0622vw, 2.0508rem);
-  --p-size-3: clamp(1.728rem, 1.4374rem + 1.453vw, 2.5635rem);
-  --p-size-4: clamp(2.0736rem, 1.6803rem + 1.9665vw, 3.2043rem);
-  --p-size-5: clamp(2.4883rem, 1.9606rem + 2.6385vw, 4.0054rem);
+  --p-size--2: calc(var(--p-size-0) * pow(var(--p-size-scale), -2));
+  --p-size--1: calc(var(--p-size-0) * pow(var(--p-size-scale), -1));
+  --p-size-1: calc(var(--p-size-0) * pow(var(--p-size-scale), 1));
+  --p-size-2: calc(var(--p-size-0) * pow(var(--p-size-scale), 2));
+  --p-size-3: calc(var(--p-size-0) * pow(var(--p-size-scale), 3));
+  --p-size-4: calc(var(--p-size-0) * pow(var(--p-size-scale), 4));
+  --p-size-5: calc(var(--p-size-0) * pow(var(--p-size-scale), 5));
+
+  /** radius */
+  --p-radius-scale: 0.25;
+  --p-radius-0: var(--p-size-0, 1rem);
+  --p-radius--3: calc(var(--p-radius-0) * (1 + var(--p-radius-scale) * -3));
+  --p-radius--2: calc(var(--p-radius-0) * (1 + var(--p-radius-scale) * -2));
+  --p-radius--1: calc(var(--p-radius-0) * (1 + var(--p-radius-scale) * -1));
+  --p-radius-1: calc(var(--p-radius-0) * (1 + var(--p-radius-scale) * 1));
+  --p-radius-2: calc(var(--p-radius-0) * (1 + var(--p-radius-scale) * 2));
+  --p-radius-3: calc(var(--p-radius-0) * (1 + var(--p-radius-scale) * 3));
+
+  /** font-weight */
+  --p-font-weight-regular: 400;
+  --p-font-weight-bold: 700;
+
+  /** line-height */
+  --p-line-height-0: 1;
+  --p-line-height-1: 1.2;
+  --p-line-height-2: 1.5;
+
+  /** transitions */
+  --p-duration-instant: 0.1s;
+  --p-duration-default: 0.3s;
+  --p-duration-slow: 0.5s;
+  --p-easing-default: cubic-bezier(0.22, 1, 0.36, 1);
 }
