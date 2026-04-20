@@ -11,7 +11,7 @@
   --hover-opacity: 0.4;
 
   > * {
-    transition: all 0.25s;
+    transition: all var(--p-duration-default);
   }
 
   /* Only applies hover effects on devices that support hover */
