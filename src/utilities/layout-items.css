@@ -1,0 +1,19 @@
+/**
+ * LAYOUT ITEM UTILITIES
+ * Controls cross-axis alignment for individual items in flex and grid contexts
+ */
+.self-start {
+  align-self: self-start;
+}
+
+.self-center {
+  align-self: center;
+}
+
+.self-stretch {
+  align-self: stretch;
+}
+
+.self-end {
+  align-self: self-end;
+}

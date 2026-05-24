@@ -8,7 +8,7 @@
  * Usage: Creates a centered container that won't exceed the threshold width
  *
  * For full-width exceptions in child elements, use:
- * [class~="center"] > * {
+ * .center > * {
  *   margin-left: 50%;
  *   transform: translateX(-50%);
  *   width: 100vw;

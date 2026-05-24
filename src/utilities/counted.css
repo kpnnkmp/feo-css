@@ -5,7 +5,8 @@
  * Custom Properties (read-only):
  * --count: The number of direct children (1-10)
  *
- * Usage: Apply to a parent element to access child count via var(--count)
+ * Usage: Apply to a parent element. Child-based layouts can read the inherited
+ * fallback value, and supporting browsers also set the value directly on children.
  */
 .counted {
   &:has(> *:nth-child(1)) {
@@ -37,5 +38,11 @@
   }
   &:has(> *:nth-child(10)) {
     --count: 10;
+  }
+}
+
+@supports (width: calc(100% / sibling-count())) {
+  .counted > * {
+    --count: sibling-count();
   }
 }

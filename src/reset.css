@@ -8,62 +8,6 @@
   margin: 0;
 }
 
-:where(html) {
-  color-scheme: light dark;
-  /* as WCAG dictates scroll in only one direction */
-  overflow-x: hidden;
-  /* avoid scaling on mobile */
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-  hanging-punctuation: first allow-end last;
-  /* Enables keyword animations, like view-transitions  */
-  @media (prefers-reduced-motion: no-preference) {
-    interpolate-size: allow-keywords;
-  }
-
-  &:focus-within {
-    scroll-behavior: smooth;
-  }
-}
-
-:where(body) {
-  position: relative;
-  min-block-size: 100dvh;
-  min-width: var(--p-bp-0);
-  font-family: system-ui, sans-serif;
-  font-size: var(--p-size-0);
-  line-height: var(--p-line-height-2);
-  /* Improve text-rendering */
-  -webkit-font-smoothing: antialiased;
-}
-
-:where(h1, h2, h3) {
-  font-weight: 600;
-}
-:where(h1) {
-  font-size: var(--p-size-3);
-}
-:where(h2) {
-  font-size: var(--p-size-2);
-}
-:where(h3) {
-  font-size: var(--p-size-1);
-}
-
-/* Set shorter line heights on headings and interactive elements */
-:where(h1, h2, h3, h4, button, input, label) {
-  line-height: var(--p-line-height-1);
-}
-
-/* Better line-wrapping */
-:where(h1, h2, h3, h4) {
-  text-wrap: balance;
-}
-
-p {
-  text-wrap: pretty;
-}
-
 /* Remove list styles on ul, ol elements, if they have any other class */
 :where(ul[role], ol[role]) {
   list-style: none;
@@ -72,17 +16,6 @@ p {
 
 :where(ul, ol):not([role]) li {
   padding-left: 0.35em;
-}
-
-/* Baseline for default links */
-:where(a:not([class])) {
-  color: currentColor;
-  text-decoration-skip-ink: auto;
-  text-underline-offset: 0.125em;
-
-  &:not(:is(:hover, :focus)) {
-    text-decoration-color: hsl(from currentColor h s l / 50%);
-  }
 }
 
 :where(img, picture, svg) {
@@ -95,38 +28,6 @@ p {
 :where(input, button, textarea, select) {
   font-family: inherit;
   font-size: inherit;
-}
-
-:where(code) {
-  font-family: ui-monospace, monospace;
-  font-size: 0.85em;
-  hyphens: none;
-}
-
-:where(:not(pre) > code) {
-  white-space: nowrap;
-  word-break: break-all;
-}
-
-:where(pre) {
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  padding: 0;
-  border-radius: var(--p-size--2);
-  word-wrap: normal;
-  word-break: normal;
-  word-spacing: normal;
-
-  & > code {
-    display: block;
-    padding: var(--p-size--1);
-    overflow-x: auto;
-    white-space: pre;
-    tab-size: 2;
-    /* fix for increased font-size safari iOS */
-    -webkit-text-size-adjust: 100%;
-  }
 }
 
 /* Removes outlines for mouse users */
@@ -145,46 +46,4 @@ p {
 /* Impacts non-tabbable items */
 :where([tabindex="-1"]) {
   outline: none;
-}
-
-/* Set the correct cursor */
-:where(:disabled, [disabled]) {
-  cursor: not-allowed;
-}
-
-:where([disabled="false"]) {
-  cursor: pointer;
-}
-
-:where([aria-controls]) {
-  cursor: pointer;
-}
-
-/* disallows scroll on background */
-:where(body:has(dialog[open])) {
-  overflow: hidden;
-}
-
-/** Basic smooth view transitions, when supported */
-@view-transition {
-  navigation: auto;
-}
-
-/* Remove all animations and transitions for
-  people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  :where(html:focus-within) {
-    scroll-behavior: auto !important;
-  }
-
-  @view-transition {
-    navigation: none;
-  }
-
-  :where(*, *::before, *::after) {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
 }

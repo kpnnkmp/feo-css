@@ -11,7 +11,7 @@
  * --layout-justify: Justify content on main axis (default: start)
  *
  * Modifiers:
- * .--no-grow - Prevents children from growing, centers them instead
+ * .--fixed - Prevents children from growing, centers them instead
  * .counted - Works with .counted utility to calculate threshold based on child count
  *
  * Usage: Children will stack vertically when their calculated width falls below --layout-threshold
@@ -36,7 +36,7 @@
     flex-basis: calc((var(--layout-threshold) - 100%) * 999);
   }
 
-  &.--no-grow {
+  &.--fixed {
     --layout-justify: center;
 
     & > * {

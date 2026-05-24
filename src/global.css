@@ -1,0 +1,138 @@
+:where(html) {
+  color-scheme: light dark;
+  /* as WCAG dictates scroll in only one direction */
+  overflow-x: hidden;
+  /* avoid scaling on mobile */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  hanging-punctuation: first allow-end last;
+
+  /* Enables keyword animations, like view-transitions */
+  @media (prefers-reduced-motion: no-preference) {
+    interpolate-size: allow-keywords;
+  }
+
+  &:focus-within {
+    scroll-behavior: smooth;
+  }
+}
+
+:where(body) {
+  position: relative;
+  min-block-size: 100dvh;
+  min-width: 20rem;
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  /* Improve text-rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+:where(h1, h2, h3) {
+  font-weight: 700;
+}
+
+:where(h1) {
+  font-size: calc(1 * pow(1.25, 3));
+}
+
+:where(h2) {
+  font-size: calc(1 * pow(1.25, 2));
+}
+
+:where(h3) {
+  font-size: calc(1 * pow(1.25, 1));
+}
+
+/* Set shorter line heights on headings and interactive elements */
+:where(h1, h2, h3, h4, button, input, label) {
+  line-height: 1.2;
+}
+
+/* Better line-wrapping */
+:where(h1, h2, h3, h4) {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Baseline for default links */
+:where(a:not([class])) {
+  color: currentColor;
+  text-decoration-skip-ink: auto;
+  text-underline-offset: 0.125em;
+
+  &:not(:is(:hover, :focus)) {
+    text-decoration-color: hsl(from currentColor h s l / 50%);
+  }
+}
+
+:where(code) {
+  font-family: ui-monospace, monospace;
+  hyphens: none;
+}
+
+:where(:not(pre) > code) {
+  white-space: nowrap;
+  word-break: break-all;
+}
+
+:where(pre) {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  border-radius: 0.5rem;
+  word-wrap: normal;
+  word-break: normal;
+  word-spacing: normal;
+
+  & > code {
+    display: block;
+    padding: 0.75rem;
+    overflow-x: auto;
+    white-space: pre;
+    tab-size: 2;
+    /* fix for increased font-size safari iOS */
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+/* Set the correct cursor */
+:where(:disabled, [disabled]) {
+  cursor: not-allowed;
+}
+
+:where([aria-controls]) {
+  cursor: pointer;
+}
+
+/* disallows scroll on background */
+:where(body:has(dialog[open])) {
+  overflow: hidden;
+}
+
+/** Basic smooth view transitions, when supported */
+@view-transition {
+  navigation: auto;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  :where(html:focus-within) {
+    scroll-behavior: auto !important;
+  }
+
+  @view-transition {
+    navigation: none;
+  }
+
+  :where(*, *::before, *::after) {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

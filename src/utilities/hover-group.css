@@ -6,12 +6,12 @@
  * --hover-opacity: Opacity for non-hovered siblings (default: 0.4)
  * --hover-grow: Scale factor for hovered elements (default: 1, no scaling)
  */
-[class*="hover-group"] {
+.hover-group {
   --hover-grow: 1;
   --hover-opacity: 0.4;
 
   > * {
-    transition: all var(--p-duration-default);
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   /* Only applies hover effects on devices that support hover */

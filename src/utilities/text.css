@@ -1,43 +1,10 @@
 /**
- * TYPOGRAPHY UTILITIES
- * Provides font styling, sizing, and text formatting utilities
+ * TEXT UTILITIES
+ * Provides text formatting and overflow utilities
  *
  * Custom Properties:
  * --line-count: Number of lines to show for .read-more class (default: 2)
  */
-
-/** Font-sizes - Uses design token values */
-.size--2 {
-  font-size: var(--p-size--2);
-}
-.size--1 {
-  font-size: var(--p-size--1);
-}
-.size-0 {
-  font-size: var(--p-size-0);
-}
-.size-1 {
-  font-size: var(--p-size-1);
-}
-.size-2 {
-  font-size: var(--p-size-2);
-}
-.size-3 {
-  font-size: var(--p-size-3);
-}
-.size-4 {
-  font-size: var(--p-size-4);
-}
-.size-5 {
-  font-size: var(--p-size-5);
-}
-/** Font styles and weights */
-.bold {
-  font-weight: 600;
-}
-.normal {
-  font-weight: 400;
-}
 .italic {
   font-style: italic;
 }
@@ -81,9 +48,4 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-}
-
-/* Resets line-height to 1 */
-.lh-reset {
-  line-height: 1;
 }

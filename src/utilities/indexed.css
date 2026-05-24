@@ -39,3 +39,9 @@
     --index: 10;
   }
 }
+
+@supports (width: calc(sibling-index() * 1px)) {
+  .indexed > * {
+    --index: sibling-index();
+  }
+}

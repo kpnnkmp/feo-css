@@ -8,11 +8,8 @@
  * --layout-items: Align items on cross axis (default: stretch)
  * --layout-justify: Justify content on main axis (default: start)
  *
- * Helper Classes:
+ * Modifiers:
  * .wrap - Enables flex-wrap
- * .grow - Flex-grow: 1
- * .no-shrink - Flex-shrink: 0
- * .self-* - Individual align-self properties
  */
 .flex {
   --layout-direction: row;
@@ -27,30 +24,6 @@
   justify-content: var(--layout-justify);
 }
 
-.wrap {
+.flex.wrap {
   flex-wrap: wrap;
-}
-
-.grow {
-  flex-grow: 1;
-}
-
-.no-shrink {
-  flex-shrink: 0;
-}
-
-.self-start {
-  align-self: self-start;
-}
-
-.self-center {
-  align-self: center;
-}
-
-.self-stretch {
-  align-self: stretch;
-}
-
-.self-end {
-  align-self: self-end;
 }

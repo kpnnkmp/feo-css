@@ -1,5 +1,4 @@
 {
-  "dependencies": {},
   "scripts": {
     "css:core": "lightningcss --bundle --minify --targets '> 1% and last 3 versions' src/feo.css -o feo.min.css",
     "css:docs": "yarn css:core && copyfiles -f ./*.min.css public",
@@ -8,13 +7,13 @@
     "build:11ty": "npx @11ty/eleventy && yarn css:docs"
   },
   "name": "feo-css",
-  "version": "6.0.0-beta.10",
+  "version": "6.0.0-beta.11",
   "main": "feo.css",
   "type": "module",
   "description": "A tiny CSS framework",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kpnnkmp/feo-css.git"
+    "url": "git+https://github.com/interruptd/feo-css.git"
   },
   "keywords": [
     "cube css",
@@ -23,9 +22,9 @@
   "author": "Kevin Pennekamp <kevin@interrupted.dev>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kpnnkmp/feo-css/issues"
+    "url": "https://github.com/interruptd/feo-css/issues"
   },
-  "homepage": "https://github.com/kpnnkmp/feo-css#readme",
+  "homepage": "https://github.com/interruptd/feo-css#readme",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.1",

@@ -3,12 +3,10 @@
  * Creates a CSS container query context for responsive design
  *
  * Custom Properties:
- * --container-name: The container name for queries (default: layoutContainer)
+ * --container-name: Optional container name for queries (default: unnamed)
  */
 .container {
-  --container-name: layoutContainer;
-
-  container-name: var(--container-name);
+  container-name: var(--container-name, none);
   container-type: inline-size;
   /* Prevents overflow issues when content doesn't wrap */
   min-width: 0;

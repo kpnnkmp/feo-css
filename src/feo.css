@@ -1,13 +1,11 @@
 @layer tokens, global, layout, components, utilities;
 
-/** tokens */
-@import "tokens/primitives.css" layer(tokens);
-
 /** global */
 @import "reset.css" layer(global);
+@import "global.css" layer(global);
 
 /** layout */
-@import "layout/aspect-ratio.css" layer(layout);
+@import "layout/ratio.css" layer(layout);
 @import "layout/center.css" layer(layout);
 @import "layout/cluster.css" layer(layout);
 @import "layout/equal.css" layer(layout);
@@ -27,11 +25,10 @@
 @import "utilities/click-area.css" layer(utilities);
 @import "utilities/container.css" layer(utilities);
 @import "utilities/counted.css" layer(utilities);
-@import "utilities/dimensions.css" layer(utilities);
 @import "utilities/hover-group.css" layer(utilities);
 @import "utilities/indexed.css" layer(utilities);
-@import "utilities/margin.css" layer(utilities);
+@import "utilities/layout-items.css" layer(utilities);
 @import "utilities/no-print.css" layer(utilities);
-@import "utilities/typography.css" layer(utilities);
+@import "utilities/text.css" layer(utilities);
 @import "utilities/visually-hidden.css" layer(utilities);
 @import "utilities/z-index.css" layer(utilities);

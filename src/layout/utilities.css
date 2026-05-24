@@ -4,10 +4,9 @@
  *
  * These utilities provide a consistent API for configuring:
  * - Direction and alignment properties
- * - Gap spacing using design tokens
- * - Threshold values for responsive behavior
+ * - Shared layout configuration values
  *
- * Usage: Combine with layout classes (e.g., .flex.--column.--gap-2.--center)
+ * Usage: Combine with layout classes (e.g., .flex.--column.--center)
  */
 
 /* DIRECTION UTILITIES - Controls --layout-direction */
@@ -46,59 +45,34 @@
 .--justify-around {
   --layout-justify: space-around;
 }
-/* GAP UTILITIES - Controls --layout-gap using design tokens */
-.--gap-none {
-  --layout-gap: none;
+
+/* GRID UTILITIES - Controls --layout-amount */
+.--amount-2 {
+  --layout-amount: 2;
 }
-.--gap--20 {
-  --layout-gap: var(--p-size--20);
+.--amount-3 {
+  --layout-amount: 3;
 }
-.--gap--2 {
-  --layout-gap: var(--p-size--2);
+.--amount-4 {
+  --layout-amount: 4;
 }
-.--gap--1 {
-  --layout-gap: var(--p-size--1);
+.--amount-5 {
+  --layout-amount: 5;
 }
-.--gap-0 {
-  --layout-gap: var(--p-size-0);
+.--amount-6 {
+  --layout-amount: 6;
 }
-.--gap-1 {
-  --layout-gap: var(--p-size-1);
+
+/* RATIO UTILITIES - Controls --ratio */
+.--ratio-1x1 {
+  --ratio: 1 / 1;
 }
-.--gap-2 {
-  --layout-gap: var(--p-size-2);
+.--ratio-16x9 {
+  --ratio: 16 / 9;
 }
-.--gap-3 {
-  --layout-gap: var(--p-size-3);
+.--ratio-2x1 {
+  --ratio: 2 / 1;
 }
-.--gap-4 {
-  --layout-gap: var(--p-size-4);
-}
-.--gap-5 {
-  --layout-gap: var(--p-size-5);
-}
-/* THRESHOLD UTILITIES - Controls --layout-threshold using breakpoint tokens */
-.--threshold--2 {
-  --layout-threshold: var(--p-bp--2);
-}
-.--threshold--1 {
-  --layout-threshold: var(--p-bp--1);
-}
-.--threshold-0 {
-  --layout-threshold: var(--p-bp-0);
-}
-.--threshold-1 {
-  --layout-threshold: var(--p-bp-1);
-}
-.--threshold-2 {
-  --layout-threshold: var(--p-bp-2);
-}
-.--threshold-3 {
-  --layout-threshold: var(--p-bp-3);
-}
-.--threshold-4 {
-  --layout-threshold: var(--p-bp-4);
-}
-.--threshold-5 {
-  --layout-threshold: var(--p-bp-5);
+.--ratio-3x2 {
+  --ratio: 3 / 2;
 }
