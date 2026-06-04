@@ -33,15 +33,15 @@
 }
 
 :where(h1) {
-  font-size: calc(1 * pow(1.25, 3));
+  font-size: calc(1rem * pow(1.25, 3));
 }
 
 :where(h2) {
-  font-size: calc(1 * pow(1.25, 2));
+  font-size: calc(1rem * pow(1.25, 2));
 }
 
 :where(h3) {
-  font-size: calc(1 * pow(1.25, 1));
+  font-size: calc(1rem * pow(1.25, 1));
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -52,10 +52,6 @@
 /* Better line-wrapping */
 :where(h1, h2, h3, h4) {
   text-wrap: balance;
-}
-
-p {
-  text-wrap: pretty;
 }
 
 /* Baseline for default links */
