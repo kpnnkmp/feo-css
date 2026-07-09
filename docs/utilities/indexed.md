@@ -22,6 +22,13 @@ Apply the `.indexed` class to a parent element, and each direct child will autom
 
 The utility is particularly useful for creating staggered animations where each child element animates with a delay based on its position, or for applying progressive styling changes across a series of elements.
 
+## Browser support
+
+`.indexed` is progressively enhanced:
+
+- **Baseline** — each child gets its `--index` from `:nth-child()` rules, capped at **10** children.
+- **Enhanced** — in browsers that support [`sibling-index()`](https://developer.mozilla.org/en-US/docs/Web/CSS/sibling-index), every child receives its **exact** position, with no 10-item cap.
+
 ## Custom Properties (Read-only)
 
 <div class="scroll">

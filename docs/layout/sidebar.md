@@ -11,7 +11,7 @@ The **Sidebar** layout creates a responsive 2-column layout with one fixed-width
 ## Example
 
 ```html
-<div class="sidebar --right --gap-3 --threshold-3">
+<div class="sidebar --right" style="--layout-gap: 1rem; --layout-threshold: 20rem">
   <main>Main content area that flexes</main>
   <aside>Fixed-width sidebar content</aside>
 </div>
@@ -69,14 +69,6 @@ The **Sidebar** layout creates a responsive 2-column layout with one fixed-width
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td><code>.--gap-*</code></td>
-      <td>Controls spacing between items using Feo.css design tokens for size</td>
-    </tr>
-    <tr>
-      <td><code>.--threshold-*</code></td>
-      <td>Controls the fixed sidebar width using Feo.css design tokens for breakpoints</td>
-    </tr>
     <tr>
       <td><code>.--start</code>, <code>.--end</code>, <code>.--center</code>, <code>.--stretch</code></td>
       <td>Controls cross-axis alignment of items</td>

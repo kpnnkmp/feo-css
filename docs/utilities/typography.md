@@ -6,26 +6,24 @@ key: typography
 github: true
 ---
 
-The **Typography** utilities provide comprehensive font styling, sizing, and text formatting controls. These utilities cover font sizes using design tokens, text styling options, alignment controls, and advanced text overflow handling for creating consistent and readable typography throughout your application.
+The **Typography** utilities provide text styling, transformation, alignment, and overflow controls. Font sizing and weight are handled by the global element defaults and your own project tokens — these utilities cover the formatting decisions that sit on top of that baseline.
 
 ## Usage
 
-Typography utilities can be combined to achieve various text styling effects. The utilities include responsive font sizing, text transformation, alignment, and overflow controls that work together to create flexible typography systems.
+Typography utilities can be combined to achieve various text styling effects. They cover text transformation, alignment, and both single-line and multi-line overflow handling.
 
 ```html
-<h1 class="size-4 bold text-center">Large, bold, centered heading</h1>
+<h2 class="text-center italic">Centered, italic heading</h2>
 
-<p class="size-1 read-more" style="--line-count: 3;">
+<p class="read-more" style="--line-count: 3;">
   This paragraph will be truncated to 3 lines with an ellipsis if the content
   exceeds that height.
 </p>
 
-<span class="size-0 uppercase ellipsis">
+<span class="uppercase ellipsis">
   Single-line text that truncates with ellipsis if too long
 </span>
 ```
-
-The utilities use Feo.css design tokens for consistent sizing and provide both single-line and multi-line text overflow solutions.
 
 ## Custom Properties
 
@@ -59,18 +57,6 @@ The utilities use Feo.css design tokens for consistent sizing and provide both s
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td><code>.size-*</code></td>
-      <td>Sets font-size using Feo.css design tokens for size</td>
-    </tr>
-    <tr>
-      <td><code>.bold</code></td>
-      <td>Sets font-weight to 600</td>
-    </tr>
-    <tr>
-      <td><code>.normal</code></td>
-      <td>Sets font-weight to 400</td>
-    </tr>
     <tr>
       <td><code>.italic</code></td>
       <td>Sets font-style to italic</td>
@@ -110,10 +96,6 @@ The utilities use Feo.css design tokens for consistent sizing and provide both s
     <tr>
       <td><code>.ellipsis</code></td>
       <td>Single-line text truncation with ellipsis</td>
-    </tr>
-    <tr>
-      <td><code>.lh-reset</code></td>
-      <td>Resets line-height to 1</td>
     </tr>
   </tbody>
 </table>

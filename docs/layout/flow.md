@@ -11,7 +11,7 @@ The **Flow** layout creates consistent vertical spacing between consecutive sibl
 ## Example
 
 ```html
-<div class="flow --gap-3">
+<div class="flow" style="--layout-gap: 1.5rem">
   <h1>First element (no margin)</h1>
   <p>Second element (gets margin-top)</p>
   <p>Third element (gets margin-top)</p>
@@ -35,25 +35,6 @@ The **Flow** layout creates consistent vertical spacing between consecutive sibl
       <td><code>--layout-gap</code></td>
       <td><code>1em</code></td>
       <td>Vertical spacing between elements</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-## Class Utilities
-
-<div class="scroll">
-<table>
-  <thead>
-    <tr>
-      <th>Class</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>.--gap-*</code></td>
-      <td>Controls vertical spacing between items using Feo.css design tokens for size</td>
     </tr>
   </tbody>
 </table>

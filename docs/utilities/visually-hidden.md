@@ -10,13 +10,10 @@ The **Visually Hidden** utilities hide elements visually while keeping them acce
 
 ## Usage
 
-Apply `.visually-hidden` or `.sr-only` to elements that should be available to assistive technologies but hidden from visual users. Use the focusable variants for elements that should become visible when they receive keyboard focus, such as skip links.
+Apply `.visually-hidden` or `.sr-only` to elements that should be available to assistive technologies but hidden from visual users.
 
 ```html
 <h1>Page Title</h1>
-<a href="#main-content" class="visually-hidden-focusable">
-  Skip to main content
-</a>
 
 <button>
   <span class="visually-hidden">Close dialog</span>
@@ -46,14 +43,6 @@ The utilities ensure that hidden content remains in the accessibility tree while
     <tr>
       <td><code>.sr-only</code></td>
       <td>Alternative name for visually-hidden (screen reader only)</td>
-    </tr>
-    <tr>
-      <td><code>.visually-hidden-focusable</code></td>
-      <td>Shows hidden element when it receives focus (for skip links)</td>
-    </tr>
-    <tr>
-      <td><code>.sr-only-focusable</code></td>
-      <td>Alternative name for visually-hidden-focusable</td>
     </tr>
   </tbody>
 </table>

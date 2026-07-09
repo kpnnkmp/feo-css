@@ -11,7 +11,7 @@ The **Center** layout horizontally centers layout elements with a configurable m
 ## Example
 
 ```html
-<div class="center --threshold-4">
+<div class="center" style="--layout-threshold: 60ch">
   <h1>Centered Content</h1>
   <p>
     This content will be centered horizontally and won't exceed the threshold
@@ -36,25 +36,6 @@ The **Center** layout horizontally centers layout elements with a configurable m
       <td><code>--layout-threshold</code></td>
       <td><code>100%</code></td>
       <td>Maximum width of the centered element</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-## Class Utilities
-
-<div class="scroll">
-<table>
-  <thead>
-    <tr>
-      <th>Class</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>.--threshold-*</code></td>
-      <td>Controls the maximum width using Feo.css design tokens for breakpoints</td>
     </tr>
   </tbody>
 </table>

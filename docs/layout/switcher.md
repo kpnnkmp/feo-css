@@ -11,7 +11,7 @@ The **Switcher** layout creates a multi-column layout that switches from horizon
 ## Example
 
 ```html
-<div class="switcher --gap-2 --threshold-3">
+<div class="switcher" style="--layout-gap: 1rem; --layout-threshold: 20rem">
   <div>Column 1</div>
   <div>Column 2</div>
   <div>Column 3</div>
@@ -71,10 +71,6 @@ The **Switcher** layout creates a multi-column layout that switches from horizon
   </thead>
   <tbody>
     <tr>
-      <td><code>.--gap-*</code></td>
-      <td>Controls spacing between items using Feo.css design tokens for size</td>
-    </tr>
-    <tr>
       <td><code>.--column</code>, <code>.--row</code></td>
       <td>Controls the flex direction</td>
     </tr>
@@ -87,11 +83,7 @@ The **Switcher** layout creates a multi-column layout that switches from horizon
       <td>Controls main-axis distribution of items (start, end, center, between, around)</td>
     </tr>
     <tr>
-      <td><code>.--threshold-*</code></td>
-      <td>Controls the minimum width threshold using Feo.css design tokens for breakpoints</td>
-    </tr>
-    <tr>
-      <td><code>.--no-grow</code></td>
+      <td><code>.--fixed</code></td>
       <td>Prevents children from growing, centers them instead</td>
     </tr>
     <tr>

@@ -11,7 +11,7 @@ The **Cluster** layout groups items that automatically wrap to create clusters, 
 ## Example
 
 ```html
-<div class="cluster --gap-2 --justify-center">
+<div class="cluster --justify-center" style="--layout-gap: 1rem">
   <button>Home</button>
   <button>About</button>
   <button>Services</button>
@@ -61,10 +61,6 @@ The **Cluster** layout groups items that automatically wrap to create clusters, 
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td><code>.--gap-*</code></td>
-      <td>Controls spacing between items using Feo.css design tokens for size</td>
-    </tr>
     <tr>
       <td><code>.--start</code>, <code>.--end</code>, <code>.--center</code>, <code>.--stretch</code></td>
       <td>Controls cross-axis alignment of items</td>

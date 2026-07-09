@@ -11,11 +11,11 @@ The **Aspect Ratio** utilities maintain consistent aspect ratios for elements, e
 ## Example
 
 ```html
-<div class="ratio --16x9">
+<div class="ratio --ratio-16x9">
   <img src="video-thumbnail.jpg" alt="Video thumbnail" />
 </div>
 
-<div class="ratio --1x1">
+<div class="ratio --ratio-1x1">
   <iframe src="https://example.com/embed" title="Embedded content"></iframe>
 </div>
 ```
@@ -53,19 +53,19 @@ The **Aspect Ratio** utilities maintain consistent aspect ratios for elements, e
   </thead>
   <tbody>
     <tr>
-      <td><code>.--1x1</code></td>
+      <td><code>.--ratio-1x1</code></td>
       <td>Square aspect ratio (1:1)</td>
     </tr>
     <tr>
-      <td><code>.--16x9</code></td>
+      <td><code>.--ratio-16x9</code></td>
       <td>Widescreen aspect ratio (16:9)</td>
     </tr>
     <tr>
-      <td><code>.--2x1</code></td>
+      <td><code>.--ratio-2x1</code></td>
       <td>Panoramic aspect ratio (2:1)</td>
     </tr>
     <tr>
-      <td><code>.--3x2</code></td>
+      <td><code>.--ratio-3x2</code></td>
       <td>Traditional photo aspect ratio (3:2)</td>
     </tr>
   </tbody>

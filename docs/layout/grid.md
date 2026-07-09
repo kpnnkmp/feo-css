@@ -11,7 +11,7 @@ The **Grid** layout creates equal-width columns using CSS Grid with configurable
 ## Example
 
 ```html
-<div class="grid-4 --gap-2">
+<div class="grid --amount-4" style="--layout-gap: 1rem">
   <div>Item 1</div>
   <div>Item 2</div>
   <div>Item 3</div>
@@ -59,24 +59,8 @@ The **Grid** layout creates equal-width columns using CSS Grid with configurable
   </thead>
   <tbody>
     <tr>
-      <td><code>.--gap-*</code></td>
-      <td>Controls spacing between items using Feo.css design tokens for size</td>
-    </tr>
-    <tr>
-      <td><code>.grid-3</code></td>
-      <td>Sets 3 columns</td>
-    </tr>
-    <tr>
-      <td><code>.grid-4</code></td>
-      <td>Sets 4 columns</td>
-    </tr>
-    <tr>
-      <td><code>.grid-5</code></td>
-      <td>Sets 5 columns</td>
-    </tr>
-    <tr>
-      <td><code>.grid-6</code></td>
-      <td>Sets 6 columns</td>
+      <td><code>.--amount-2</code> … <code>.--amount-6</code></td>
+      <td>Sets the number of columns (2 through 6)</td>
     </tr>
   </tbody>
 </table>

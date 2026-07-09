@@ -11,9 +11,9 @@ The **Flex** layout provides a default flexbox utility with configurable propert
 ## Example
 
 ```html
-<div class="flex --gap-2 --justify-between">
-  <div class="grow">Main content area</div>
-  <div class="no-shrink">Sidebar</div>
+<div class="flex --justify-between" style="--layout-gap: 1rem">
+  <div>Main content area</div>
+  <div>Sidebar</div>
 </div>
 ```
 
@@ -65,10 +65,6 @@ The **Flex** layout provides a default flexbox utility with configurable propert
   </thead>
   <tbody>
     <tr>
-      <td><code>.--gap-*</code></td>
-      <td>Controls spacing between items using Feo.css design tokens for size</td>
-    </tr>
-    <tr>
       <td><code>.--column</code>, <code>.--row</code></td>
       <td>Controls the flex direction</td>
     </tr>
@@ -81,20 +77,12 @@ The **Flex** layout provides a default flexbox utility with configurable propert
       <td>Controls main-axis distribution of items (start, end, center, between, around)</td>
     </tr>
     <tr>
-      <td><code>.wrap</code></td>
+      <td><code>.--wrap</code></td>
       <td>Enables flex-wrap</td>
     </tr>
     <tr>
-      <td><code>.grow</code></td>
-      <td>Sets flex-grow: 1</td>
-    </tr>
-    <tr>
-      <td><code>.no-shrink</code></td>
-      <td>Sets flex-shrink: 0</td>
-    </tr>
-    <tr>
       <td><code>.self-start</code>, <code>.self-center</code>, <code>.self-stretch</code>, <code>.self-end</code></td>
-      <td>Individual align-self properties for specific flex items</td>
+      <td>Aligns an individual item on the cross axis (see <a href="/utilities/layout-items/">Layout Items</a>)</td>
     </tr>
   </tbody>
 </table>

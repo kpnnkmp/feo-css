@@ -11,7 +11,7 @@ The **Tiles** layout creates an auto-responsive grid system that determines colu
 ## Example
 
 ```html
-<div class="tiles --gap-2 --threshold-2">
+<div class="tiles" style="--layout-gap: 1rem; --layout-threshold: 15rem">
   <div>Tile 1</div>
   <div>Tile 2</div>
   <div>Tile 3</div>
@@ -63,14 +63,6 @@ The **Tiles** layout creates an auto-responsive grid system that determines colu
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td><code>.--gap-*</code></td>
-      <td>Controls spacing between items using Feo.css design tokens for size</td>
-    </tr>
-    <tr>
-      <td><code>.--threshold-*</code></td>
-      <td>Controls the minimum tile width using Feo.css design tokens for breakpoints</td>
-    </tr>
     <tr>
       <td><code>.--fit</code></td>
       <td>Uses auto-fit instead of auto-fill (collapses empty columns)</td>

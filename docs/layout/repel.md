@@ -11,7 +11,7 @@ The **Repel** layout distributes items with space-between, pushing them to oppos
 ## Example
 
 ```html
-<div class="repel --gap-2 --center">
+<div class="repel --center" style="--layout-gap: 1rem">
   <div class="logo">Brand Logo</div>
   <nav>
     <a href="#">Home</a>
@@ -63,10 +63,6 @@ The **Repel** layout distributes items with space-between, pushing them to oppos
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td><code>.--gap-*</code></td>
-      <td>Controls spacing between items using Feo.css design tokens for size</td>
-    </tr>
     <tr>
       <td><code>.--column</code>, <code>.--row</code></td>
       <td>Controls the flex direction</td>

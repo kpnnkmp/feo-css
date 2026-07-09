@@ -5,135 +5,68 @@ order: 3
 key: tokens
 ---
 
-Feo.css offers a limited set of design tokens, implemented in [CSS Custom Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) (`--*`). These design tokens are used in the _layout_ layer of Feo.css. To align with modern CSS frameworks, class utilities exist that apply the values of the design tokens to the API of the layout classes.
+Design tokens are the single source of truth for the visual values in a project — sizing, spacing, colors, breakpoints — expressed as [CSS Custom Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) (`--*`).
+
+Feo.css deliberately ships **almost no tokens of its own**. Earlier versions came with a full sizing and breakpoint scale, but that is the first thing most projects want to replace — a design system is where your project expresses its own meaning, and a framework has none. Instead, Feo.css gives you sensible defaults on bare HTML elements and reserves the `tokens` layer as the **first** layer in the cascade for you to fill:
+
+```css
+@layer tokens, global, layout, components, utilities;
+```
+
+Because it sits below `global`, `layout`, and `components`, everything you define there flows upward into the rest of the framework, while staying easy to override.
 
 {% include "partials/callout-naming.njk" %}
 
-## Sizing
+## Defining your tokens
 
-Feo.css offers design tokens on _sizing_ that can be used for spacing (e.g. margin and padding), font-sizes, or anything you can think of. The values are based on a combination of a few key principles:
+Add your own tokens in the `tokens` layer. Keep two tiers: _primitives_ are raw, intent-free values; _semantic_ tokens alias those primitives into project meaning. Global styles, layout, and components should only ever read the semantic tier.
 
-- Opinionated.
-- [Fluid](https://utopia.fyi/type/calculator/?c=320,16,1.2,1240,20,1.25,5,2,&s=0.75%7C0.5%7C0.25,1.5%7C2%7C3%7C4%7C6,s-l&g=s,l,xl,12). Sizes based on screen size.
-- Adjustable. You can just overwrite the custom property values.
-- Extensible. Feo.css is build in a way that you can add new tokens or change the naming, and only have to add a very small amount of classes.
+```css
+@layer tokens {
+  :root {
+    /* primitives — raw values, no opinion */
+    --p-size-0: 1rem;
+    --p-size-1: 1.25rem;
+    --p-size-2: 1.5625rem;
 
-<div>
-  <table>
-    <thead>
-      <tr>
-        <th>Token name</th>
-        <th>Value at 320px</th>
-        <th>Value at 1240px</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>--p-size--2</code></td>
-        <td>11.11px</td>
-        <td>12.80px</td>
-      </tr>
-      <tr>
-        <td><code>--p-size--1</code></td>
-        <td>13.33px</td>
-        <td>16.00px</td>
-      </tr>
-      <tr>
-        <td><code>--p-size-0</code></td>
-        <td>16.00px</td>
-        <td>20.00px</td>
-      </tr>
-      <tr>
-        <td><code>--p-size-1</code></td>
-        <td>19.20px</td>
-        <td>25.00px</td>
-      </tr>
-      <tr>
-        <td><code>--p-size-2</code></td>
-        <td>23.04px</td>
-        <td>31.25px</td>
-      </tr>
-      <tr>
-        <td><code>--p-size-3</code></td>
-        <td>27.65px</td>
-        <td>39.06px</td>
-      </tr>
-      <tr>
-        <td><code>--p-size-4</code></td>
-        <td>33.18px</td>
-        <td>48.38px</td>
-      </tr>
-      <tr>
-        <td><code>--p-size-5</code></td>
-        <td>39.81px</td>
-        <td>61.04px</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+    /* semantic — intent-based aliases of primitives */
+    --space: var(--p-size-1);
+    --measure: 60ch;
+  }
+}
+```
 
-## Breakpoints
+Scale tokens are named from a `0` base and work outward: `-0` is the base, `-1`/`-2` step up, and `--1`/`--2` step down (see the naming convention above). A fluid scale pairs well with this — the [Utopia calculator](https://utopia.fyi/type/calculator/) generates `clamp()`-based steps that grow with the viewport.
 
-Tokens used as points that can be used, whenever your UI is
-breaking. Scaling between the values is based on
-`1.33`.
+## Custom media and fonts
 
-<div>
-  <table>
-    <thead>
-      <tr>
-        <th>Token name</th>
-        <th>Value</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>--p-bp--2</code></td>
-        <td>11.31rem</td>
-      </tr>
-      <tr>
-        <td><code>--p-bp--1</code></td>
-        <td>15.04rem</td>
-      </tr>
-      <tr>
-        <td><code>--p-bp-0</code></td>
-        <td>20rem</td>
-      </tr>
-      <tr>
-        <td><code>--p-bp-1</code></td>
-        <td>20rem</td>
-      </tr>
-      <tr>
-        <td><code>--p-bp-2</code></td>
-        <td>26.6rem</td>
-      </tr>
-      <tr>
-        <td><code>--p-bp-3</code></td>
-        <td>35.38rem</td>
-      </tr>
-      <tr>
-        <td><code>--p-bp-4</code></td>
-        <td>47.05rem</td>
-      </tr>
-      <tr>
-        <td><code>--p-bp-5</code></td>
-        <td>62.58rem</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+Two other project-wide concerns belong in the `tokens` layer. Loading local fonts with `@font-face` sits naturally alongside your token definitions. Responsive breakpoints are best expressed as [`@custom-media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@custom-media) rules so the same query is reused everywhere:
 
-## Adding new design tokens
+```css
+@custom-media --sm (min-width: 40rem);
+```
 
-The design tokens of Feo.css can be easily adjusted, like any other (global) CSS custom property. Extension of the design tokens is also possible, but requires a little more work than just adding new tokens.
+One gotcha: `@custom-media` only resolves when imported **outside** of any `@layer`. Keep it in its own file and import it without a `layer()` wrapper, while the rest of your tokens stay inside `layer(tokens)`:
 
-When you add new tokens to `--p-size-*`, you need to add the following classes as well, in the correct `@layer`:
+```css
+@import "tokens/custom-media.css"; /* note: outside any layer */
+@import "tokens/fonts.css" layer(tokens);
+```
 
-- `.--gap-*` in `layer(layout)` for controlling gaps in may layout classes.
-- `.m-*`, `.mt-*`, `.mb-*` , `.ml-*` and `.mr-*` in `layer(utilities)` for controlling margins.
-- `.size-*` in `layer(utilities)` to control font-sizes.
+## Feeding tokens into layout and components
 
-If you add tokens to `--p-bp-*`, the following classes need to be adjusted.
+Every layout and component exposes its configuration as custom properties — `--layout-gap`, `--layout-threshold`, `--hover-grow`, and so on. Set those to your tokens, either in your own classes for reuse or inline for one-offs:
 
-- `.--threshold-*` in `layer(layout)` to control different aspects on dimensions of the layout container or children in layout classes.
-- `.--maxw-*` in `layer(utilities)` to control the `max-width` property.
+```css
+@layer utilities {
+  .stack {
+    --layout-gap: var(--space);
+  }
+}
+```
+
+```html
+<div class="flow" style="--layout-gap: var(--space)">…</div>
+```
+
+This is why Feo.css no longer ships `.--gap-*`, `.size-*`, or `.--threshold-*` style scale utilities: those classes only made sense against a built-in scale. With the scale now living in your project, you wire up the handful of values you actually use and nothing more.

@@ -23,6 +23,15 @@ Apply the `.counted` class to a parent element, and it will automatically provid
 
 The utility works particularly well with layout components like the switcher layout, where you can use `var(--count)` in calculations to create adaptive behavior based on the number of child elements.
 
+## Browser support
+
+`.counted` is progressively enhanced:
+
+- **Baseline** — `--count` is derived with `:has()` and set on the `.counted` parent (inherited by its children). It is capped at **10** direct children.
+- **Enhanced** — in browsers that support [`sibling-count()`](https://developer.mozilla.org/en-US/docs/Web/CSS/sibling-count), `--count` is set on each child to the **exact** total, with no 10-item cap.
+
+Read `var(--count)` on the children (not the parent) to benefit from both paths.
+
 ## Custom Properties (Read-only)
 
 <div class="scroll">

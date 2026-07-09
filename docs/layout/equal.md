@@ -11,7 +11,7 @@ The **Equal** layout makes all children equal size within the available space. T
 ## Example
 
 ```html
-<div class="equal --gap-2">
+<div class="equal" style="--layout-gap: 1rem">
   <div>Column 1</div>
   <div>Column 2 with more content</div>
   <div>Column 3</div>
@@ -65,10 +65,6 @@ The **Equal** layout makes all children equal size within the available space. T
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td><code>.--gap-*</code></td>
-      <td>Controls spacing between items using Feo.css design tokens for size</td>
-    </tr>
     <tr>
       <td><code>.--column</code>, <code>.--row</code></td>
       <td>Controls the flex direction</td>

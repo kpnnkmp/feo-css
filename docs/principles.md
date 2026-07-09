@@ -5,48 +5,115 @@ order: 2
 key: principles
 ---
 
-## Separate structure from skin
+Feo.css follows a layered, token-driven architecture. The goal of this architecture is to separate structure from visual identity, and create a CSS architecture that is predictable, scalable, and easy for both engineers and AI agents to extend without collapsing into ad hoc styling.
 
-There are many common and overlapping (responsive) layout patterns. By separating these and reusing them as much as possible, you can achieve consistency in implementation, and maintainability in code. We see this coming back in [Cube CSS](https://cube.fyi/), on which Feo.css is (loosely) based. Feo.css gives you the tools for composable layouts using the [layout](../layout) layer and [utility](../utilities) layer. Feo.css does provide a few exceptions in the [utility](../utilities) layer:
+## High-level architecture
 
-- Interaction classes such as [`click-area`](../utilities/click-area).
-- Helpers for [typography](../utilities/typography).
-- Utilities that are not really classified as structure or skin (e.g. [`no-print`](../utilities/no-print)).
+The overall architecture follows a layered approach.
 
-{% include "partials/callout-padding.njk" %}
+1. **Tokens**: The single source of truth for visual values, organised by scope.
+   1. _Primitives_: Raw values with no opinion or intent. They are never the semantic language of the project.
+   2. _Semantic_: Intent-based aliases of primitives that express project meaning. This is the project-owned token layer used by global styles, components, and optional project utilities.
+2. **reset.css + global.css**: Project-wide styles applied to bare HTML elements using semantic tokens; the baseline everything inherits from.
+3. **Layout**: Reusable spatial primitives that define how elements relate to each other, with no visual identity of their own.
+4. **Components**: All UI components, from generic and portable design system building blocks to project-specific compositions. Components are categorised by use case and user intent, not by visual or mechanical similarity.
+5. **Utilities**: Single-purpose classes that do one small job. They may expose project semantic tokens or encapsulate small reusable patterns, but they must not bypass the architecture.
 
-## Layout, utilities, components, and ... utilities.
+## Guiding principles
 
-Feo.css is a variation of [Cube CSS](https://cube.fyi/). It follows the a slightly different order of the different layers.
+1. How elements relate spatially to each other is separated from visual identity, separating structure from skin. No component ever manages its own positioning relative to siblings.
+2. The wider the decision applies, the higher up the stack it lives. Style at the highest appropriate level and let values flow downward naturally. Only introduce component-level styles when they differ from the global baseline.
+3. Global CSS styles what something _is_. Components style what something _is in a context_. Utilities style one small behavior or one semantic decision, not a raw primitive step.
+4. A three-tier approach is used for design tokens: primitives, semantic, and component-level tokens. Each layer only uses tokens from the previous layer.
+5. Component-specific tokens are colocated with components in the component API. A component property is introduced in the API when it is genuinely specific to that component.
+6. A component API declares what can be customised, keeping the internal CSS an implementation detail that consumers never need to touch.
+7. Public CSS APIs should use explicit, opt-in selectors. Avoid selector patterns that create accidental behavior through naming coincidence.
 
-1. Layout
-2. Utilities
-3. Components
-4. Utilities.
+## Project structure
 
-As you can see, on the implementation level, you go past the utility layer, twice. First you try to solve things as much as possible with layout and utilities. If that is not possible, you write _components_ (old-school CSS yo). But keep your components light. If there is an exception (e.g. `margin-top`) for one implementation of your component, use a utility class! Due to this reason, Feo.css implements the following sequence of layers.
+When implementing this architecture or approach, it is advised to use the project structure as established below. It is possible to combine existing frameworks within various layers (e.g. use of [feo.css](https://feo.crinkles.dev) for several of the layers, or [tailwind](https://tailwindcss.com) as the utilities layer).
 
 ```
-@layer global, layout, components, utilities;
+styles/
+├── components/
+│   ├── primitives/			← elemental building blocks
+│   ├── containers/			← e.g. wrappers
+│   └── .../
+│
+├── layout/
+│
+├── tokens/
+│   ├── custom-media.css		← @custom-media rules
+│   ├── fonts.css			← loading of local fonts
+│   ├── primitives.css
+│   └── semantic.css
+│
+├── utilities/
+│
+├── global.css
+├── index.css
+└── reset.css
 ```
 
-**Note**: the components layer is not part of Feo.css at its core. But the layer is _defined_. For specificity reasons, make sure to scope your components correctly in the `@layer components`.
-
-## API-first CSS
-
-Many classes have properties that are not the same in all scenarios. The `.switcher` example you want to be able to adjust the gap or the width that triggers the orientation change.
-
-You could add a class that alters that property. That is not the case for all APIs. The example `.switcher` pattern used before shows that `var(--p-bp-0)` is used in a calculation. The token is used in a child selector (`>`), not directly on `.switcher`. Another scenario is a token that is used for multiple properties.
-
-_To avoid overwriting all these scenarios one by one, we define clear APIs through custom properties._
-
-Let’s take the previous `.switcher` layout class as an example. Instead if directly setting the properties, we define two APIs for the class to control it.
+The `index.css` imports all the files using CSS [￼`@layer`￼](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@layer) rules.
 
 ```css
-.switcher {
-  --layout-gap: var(--p-size-0);
-  --layout-width: var(--p-bp-0);
-}
+/* Example of index.css content */
+@layer reset, tokens, global, layout, components, utilities;
+
+/** TOKEN LAYER */
+@import "tokens/custom-media.css"; /* note: only works outside layers */
+@import "tokens/fonts.css" layer(tokens);
+@import "tokens/primitives.css" layer(tokens);
+@import "tokens/semantic.css" layer(tokens);
+
+/** GLOBAL */
+@import "reset.css" layer(global);
+@import "global.css" layer(global);
+
+/** COMPONENTS */
+@import "components/primitives/button.css" layer(components);
+@import "components/primitives/icon.css" layer(components);
 ```
 
-With this API different methods can be used to control the results.
+## Implementation guidelines
+
+### Implementation order of styles
+
+The key rule is “_solve problems with layout primitives and existing utilities first_”. If that is not enough, introduce new styles under the following rules.
+
+1. Is this a default rule for plain HTML elements? Put it in `global.css`.
+2. Is this a reusable structural pattern with no visual identity? Put it in `layout/`.
+3. Is this a reusable UI element with context, state, or identity? Put it in `components/`.
+4. Is this a tiny helper that does one job without exposing raw primitive values? Put it in `utilities/`.
+5. If a specific implementation still needs a small exception from an existing class in `layout/` or `components/`, there are two options:
+   - If a single property in the API should be adjusted, use a class utility.
+   - If multiple properties in the API need to be adjusted, use a `data-*` selector.
+6. If no dedicated place can be found for your style add create a `specific/` directory and place it there.
+
+### Naming convention
+
+Use the following naming convention rules:
+
+- Primitive tokens should be prefixed with `--p-*`.
+- Semantic tokens that are related on a scale (e.g. sizing) should have a name that relates to the system, starting from a base and work up and down. For instance, `--size-0` represents the default font-size of the `body`, `--size--1` is one step smaller, and `--size-1` is one step bigger.
+- Class utilities are classes that that allow you to control one property from a component or layout API (i.e. a different class). These classes are named as `.--<class-util-name>`.
+
+### Progressive enhancement
+
+If a modern CSS feature improves an existing utility or pattern but is not yet broadly supported:
+
+- Keep a stable fallback.
+- Add the improved behavior behind `@supports`.
+- Keep the public API consistent across both paths.
+- Document any important differences in behavior or value scope.
+
+### Anti-patterns
+
+Avoid the following anti-patterns.
+
+- Exposing primitive token steps directly in application markup
+- Adding visual identity to layout primitives
+- Adding component styling to utilities
+- Using utilities to solve sibling spacing where a layout primitive should own it
+- Treating the starter library as the finished design system

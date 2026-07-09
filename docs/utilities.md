@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: Utilities
-order: 5
+order: 7
 key: utilities
 ---
 
@@ -10,7 +10,7 @@ Utility classes are classes that do one thing, and one thing well. They are diff
 
 {% include "partials/callout-utilities.njk" %}
 
-Feo.css offers a very limited set of utility classes. Only common utility classes unrelated to design tokens are given, and a limited set of utility classes based on the Feo.css design tokens are included.
+Feo.css offers a very limited set of utility classes: small, single-purpose helpers that are independent of design tokens. Utilities tied to a design scale — spacing, sizing, and similar — are intentionally left to your own project, since Feo.css ships very few tokens of its own.
 
 {% set items = collections.utilities %}
 {% include "partials/sublist.njk" %}
