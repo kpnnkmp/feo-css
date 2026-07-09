@@ -9,7 +9,7 @@
  * --layout-justify: Justify content on main axis (default: start)
  *
  * Modifiers:
- * .wrap - Enables flex-wrap
+ * .--wrap - Enables flex-wrap
  */
 .flex {
   --layout-direction: row;
@@ -24,6 +24,6 @@
   justify-content: var(--layout-justify);
 }
 
-.flex.wrap {
+.flex.--wrap {
   flex-wrap: wrap;
 }

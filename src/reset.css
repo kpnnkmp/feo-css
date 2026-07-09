@@ -8,14 +8,10 @@
   margin: 0;
 }
 
-/* Remove list styles on ul, ol elements, if they have any other class */
-:where(ul[role], ol[role]) {
+/* Remove list styles on ul, ol elements */
+:where(ul, ol) {
   list-style: none;
-  padding-left: 0;
-}
-
-:where(ul, ol):not([role]) li {
-  padding-left: 0.35em;
+  padding-inline-start: 0;
 }
 
 :where(img, picture, svg) {

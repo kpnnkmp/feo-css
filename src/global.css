@@ -20,7 +20,7 @@
 :where(body) {
   position: relative;
   min-block-size: 100dvh;
-  min-width: 20rem;
+  min-inline-size: 20rem;
   font-family: system-ui, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
@@ -59,10 +59,7 @@
   color: currentColor;
   text-decoration-skip-ink: auto;
   text-underline-offset: 0.125em;
-
-  &:not(:is(:hover, :focus)) {
-    text-decoration-color: hsl(from currentColor h s l / 50%);
-  }
+  text-decoration-color: hsl(from currentColor h s l / 50%);
 }
 
 :where(code) {

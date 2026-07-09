@@ -21,11 +21,13 @@
 @import "layout/tiles.css" layer(layout);
 @import "layout/utilities.css" layer(layout);
 
+/** components */
+@import "components/hover-group.css" layer(components);
+
 /** utilities */
 @import "utilities/click-area.css" layer(utilities);
 @import "utilities/container.css" layer(utilities);
 @import "utilities/counted.css" layer(utilities);
-@import "utilities/hover-group.css" layer(utilities);
 @import "utilities/indexed.css" layer(utilities);
 @import "utilities/layout-items.css" layer(utilities);
 @import "utilities/no-print.css" layer(utilities);

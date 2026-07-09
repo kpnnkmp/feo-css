@@ -4,7 +4,6 @@
  *
  * Classes:
  * .visually-hidden, .sr-only - Hides element but keeps it in accessibility tree
- * .visually-hidden-focusable, .sr-only-focusable - Shows hidden element when focused
  */
 :is(.visually-hidden, .sr-only) {
   position: absolute;
