@@ -2,6 +2,7 @@
 public/
 site/
 docs/
+_docs/
 package.json
 .eleventy.js
 netlify.toml

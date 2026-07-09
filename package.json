@@ -4,10 +4,12 @@
     "css:docs": "yarn css:core && copyfiles -f ./*.min.css public",
     "build": "yarn css:core",
     "start": "eleventy --serve & yarn css:docs & onchange 'src/**/*.css' -- yarn css:docs",
-    "build:11ty": "npx @11ty/eleventy && yarn css:docs"
+    "build:11ty": "npx @11ty/eleventy && yarn css:docs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "name": "feo-css",
-  "version": "6.0.0-beta.12",
+  "version": "6.0.0-beta.16",
   "main": "feo.css",
   "type": "module",
   "description": "A tiny CSS framework",
@@ -30,6 +32,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.1",
     "copyfiles": "^2.4.1",
     "lightningcss-cli": "^1.30.1",
-    "onchange": "^7.1.0"
+    "onchange": "^7.1.0",
+    "prettier": "^3.9.5"
   }
 }
