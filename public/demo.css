@@ -1,200 +1,272 @@
-:root {
-  /** PRIMITIVES */
-  --p-neutral-0: hsl(215, 12%, 12%);
-  --p-neutral-1: hsl(215, 12%, 22%);
-  --p-neutral-2: hsl(215, 12%, 36%);
-  --p-neutral-3: hsl(215, 24%, 78%);
-  --p-neutral-4: hsl(215, 24%, 92%);
-  --p-neutral-5: hsl(215, 24%, 98%);
-  /** SEMANTIC */
-  --brand-0: #1c756a;
-  --brand-1: #f2b25a;
-  --brand-2: #939be6;
-  --primary--1: light-dark(
-    hsl(from var(--brand-0) h s 95),
-    hsl(from var(--brand-1) h s 10)
-  );
-  --primary-0: light-dark(var(--brand-0), var(--brand-1));
-  --text-0: light-dark(var(--p-neutral-0), var(--p-neutral-5));
-  --text-1: light-dark(var(--p-neutral-1), var(--p-neutral-4));
-  --text-2: light-dark(var(--p-neutral-2), var(--p-neutral-3));
-  --surface-0: light-dark(var(--p-neutral-5), var(--p-neutral-0));
-  --surface-1: light-dark(var(--p-neutral-4), var(--p-neutral-1));
-  --surface-2: light-dark(var(--p-neutral-3), var(--p-neutral-2));
-  --code-primary: light-dark(var(--brand-0), var(--brand-1));
-  --code-secondary: light-dark(
-    hsl(from var(--brand-2) h s calc(l * 0.8)),
-    var(--brand-2)
-  );
-  /* others */
-  --p-shadow:
-    0 1px 1px hsl(0deg 0% 0% / 0.075), 0 3px 3px hsl(0deg 0% 0% / 0.075),
-    0 6px 6px hsl(0deg 0% 0% / 0.075);
+/**
+ * Docs-site styling layered on top of feo.css.
+ * feo.min.css declares this same @layer order and fills it; restating it keeps
+ * demo's rules composing WITH feo per layer instead of winning unlayered.
+ */
+@layer tokens, global, layout, components, utilities;
+
+@layer tokens {
+  :root {
+    /** PRIMITIVES — raw values, no intent */
+    --p-neutral-0: hsl(215, 12%, 12%);
+    --p-neutral-1: hsl(215, 12%, 22%);
+    --p-neutral-2: hsl(215, 12%, 36%);
+    --p-neutral-3: hsl(215, 24%, 78%);
+    --p-neutral-4: hsl(215, 24%, 92%);
+    --p-neutral-5: hsl(215, 24%, 98%);
+    --p-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075), 0 3px 3px hsl(0deg 0% 0% / 0.075), 0 6px 6px hsl(0deg 0% 0% / 0.075);
+
+    --p-size-scale: 1.25;
+    --p-size-0: round(down, clamp(1rem, 0.913rem + 0.4348vw, 1.25rem), 0.5px);
+    --p-size--2: round(down, calc(var(--p-size-0) * pow(var(--p-size-scale), -2)), 0.5px);
+    --p-size--1: round(down, calc(var(--p-size-0) * pow(var(--p-size-scale), -1)), 0.5px);
+    --p-size-1: round(down, calc(var(--p-size-0) * pow(var(--p-size-scale), 1)), 0.5px);
+    --p-size-2: round(down, calc(var(--p-size-0) * pow(var(--p-size-scale), 2)), 0.5px);
+    --p-size-3: round(down, calc(var(--p-size-0) * pow(var(--p-size-scale), 3)), 0.5px);
+    --p-size-4: round(down, calc(var(--p-size-0) * pow(var(--p-size-scale), 4)), 0.5px);
+    --p-size-5: round(down, calc(var(--p-size-0) * pow(var(--p-size-scale), 5)), 0.5px);
+
+    /** SEMANTIC — project meaning; alias primitives, never read raw below */
+    --brand-0: #1c756a;
+    --brand-1: #f2b25a;
+    --brand-2: #939be6;
+    --primary--1: light-dark(hsl(from var(--brand-0) h s 95), hsl(from var(--brand-1) h s 10));
+    --primary-0: light-dark(var(--brand-0), var(--brand-1));
+    --text-0: light-dark(var(--p-neutral-0), var(--p-neutral-5));
+    --text-1: light-dark(var(--p-neutral-1), var(--p-neutral-4));
+    --text-2: light-dark(var(--p-neutral-2), var(--p-neutral-3));
+    --surface-0: light-dark(var(--p-neutral-5), var(--p-neutral-0));
+    --surface-1: light-dark(var(--p-neutral-4), var(--p-neutral-1));
+    --surface-2: light-dark(var(--p-neutral-3), var(--p-neutral-2));
+    --code-primary: light-dark(var(--brand-0), var(--brand-1));
+    --code-secondary: light-dark(hsl(from var(--brand-2) h s calc(l * 0.8)), var(--brand-2));
+    --shadow: var(--p-shadow);
+
+    /** SIZING — this site's own scale (feo.css ships none); 1.25 modular ratio.
+        --size-0 is the body default, negative steps smaller, positive bigger. */
+    --size--2: var(--p-size--2);
+    --size--1: var(--p-size--1);
+    --size-0: var(--p-size-0);
+    --size-1: var(--p-size-1);
+    --size-2: var(--p-size-2);
+  }
 }
 
-/* Global styles */
-body {
-  --body-padding: var(--p-size--2);
+@layer global {
+  body {
+    --body-padding: var(--size--2);
 
-  color: var(--text-0);
-  background-color: var(--surface-1);
-  padding: var(--body-padding);
-}
+    color: var(--text-0);
+    background-color: var(--surface-1);
+    padding: var(--body-padding);
+    font-size: var(--size-0);
+  }
 
-::selection {
-  color: var(--surface-0) !important;
-  background: var(--text-0) !important;
-}
+  ::selection {
+    color: var(--surface-0);
+    background: var(--text-0);
+  }
 
-a {
-  transition: all 200ms;
-  color: var(--primary-0);
-}
+  a {
+    transition: all 200ms;
+    color: var(--primary-0);
+  }
 
-/* code blocks */
-pre {
-  background-color: var(--surface-1);
-}
-:not(pre) > code {
-  color: var(--primary-0);
-}
+  /* code blocks */
+  code {
+    font-size: 0.85em;
+  }
+  pre {
+    background-color: var(--surface-1);
+  }
+  :not(pre) > code {
+    color: var(--primary-0);
+  }
 
-/* Structure */
-main {
-  position: relative;
-  background: var(--surface-0);
-  padding: var(--p-size-2);
-  box-shadow: var(--p-shadow);
-  border-radius: var(--p-size-0);
-}
-article {
-  width: 100%;
-  max-width: 60ch;
-}
-footer {
-  padding: var(--p-size-0);
-}
-/* Main navigation */
-nav {
-  padding: var(--p-size-0);
-  position: sticky;
-  top: var(--body-padding);
-  height: calc(100vh - 2 * var(--body-padding));
-}
+  article {
+    width: 100%;
+    max-width: 60ch;
+  }
 
-nav ul {
-  --hover-grow: 1;
-}
-nav a {
-  text-decoration: none;
-  color: var(--text-1);
-}
-nav a:hover {
-  color: var(--text-5);
-}
-nav a[data-selected="true"] {
-  font-weight: bold;
-}
-/* ensure text does not go on multiline in horizontal orientation */
-nav li {
-  white-space: nowrap;
-}
-/* Breadcrumbs */
-.breadcrumbs {
-  color: var(--text-2);
-  text-transform: uppercase;
-}
-.breadcrumbs .divider {
-  color: var(--surface-2);
-}
-.breadcrumbs li:last-child a {
-  text-decoration: none;
-}
-/* article styling */
-article h1 {
-  margin-block-start: var(--p-size--2);
-}
-/* Callouts */
-aside.callout {
-  background-color: var(--primary--1);
-  border-left: 5px solid var(--primary-0);
-  padding: var(--p-size--2);
-  display: flex;
-  flex-direction: column;
-  gap: var(--p-size--2);
-  font-size: var(--p-size--1);
-  border-top-right-radius: var(--p-size--1);
-  border-bottom-right-radius: var(--p-size--1);
+  article h1 {
+    margin-block-start: var(--size--2);
+  }
+
+  article {
+    :where(ul, ol):not([class]) {
+      list-style: outside;
+      padding-left: var(--size-2);
+
+      > li {
+        margin-left: var(--space-large);
+
+        &::marker {
+          color: var(--color-accent);
+          font-weight: var(--fw-bold);
+        }
+      }
+    }
+
+    ul:not([class]) li {
+      list-style-type: "✦  ";
+    }
+
+    ol:not([class]) {
+      list-style: decimal outside;
+    }
+  }
+
+  table {
+    /* Table fills always the available space */
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: calc(var(--size-0) * 0.375 * 1.3);
+  }
+  td,
+  th {
+    padding: calc(0.25 * var(--size-0));
+    text-align: left;
+  }
+  th {
+    background: var(--text-2);
+    color: var(--surface-0);
+  }
 }
 
-aside.callout .title {
-  color: var(--primary-0);
-  font-weight: bold;
-  padding-bottom: 4px;
-  border-bottom: 1px solid var(--primary-0);
-}
+@layer components {
+  /* Structure — configure feo's .sidebar layout primitive for this instance */
+  .sidebar {
+    --layout-gap: var(--size-2);
+    --layout-threshold: 15rem;
+  }
+  main {
+    flex-grow: 1;
+    position: relative;
+    background: var(--surface-0);
+    padding: var(--size-2);
+    box-shadow: var(--shadow);
+    border-radius: var(--size-0);
+  }
 
-/* small changes for responsiveness */
-@media (max-width: 681px) {
+  /* Main navigation */
   nav {
-    position: initial;
-    height: auto;
+    --layout-gap: var(--size-1);
+    padding: var(--size-0);
+    position: sticky;
+    top: var(--body-padding);
+    height: calc(100vh - 2 * var(--body-padding));
+  }
+  nav ul {
+    --hover-grow: 1;
+    --layout-gap: var(--size--2);
+    --layout-threshold: 15rem;
   }
   nav ul ul {
-    display: none;
+    margin-block-start: var(--size--2);
+    font-size: var(--size--1);
   }
-  /* Overwrites scroll behavior and ensures growth in case main as little content */
-  main {
-    min-height: calc(100vh - 165px - var(--p-size-2));
-    padding: var(--p-size-0);
+  nav a {
+    text-decoration: none;
+    color: var(--text-1);
   }
-}
+  nav a:hover {
+    color: var(--text-0);
+  }
+  nav a[data-selected="true"] {
+    font-weight: bold;
+  }
+  nav svg {
+    height: 2.5rem;
+  }
+  /* ensure text does not go on multiline in horizontal orientation */
+  nav li {
+    white-space: nowrap;
+  }
 
-/* SYNTAX */
-.token.punctuation,
-.token.comment,
-.token.operator {
-  color: var(--text-2);
-  font-weight: 300;
-}
+  footer {
+    --layout-gap: var(--size--2);
+    padding: var(--size-0);
+    font-size: var(--size--1);
+  }
 
-/** SYNTAX */
-.token.keyword,
-.token.tag {
-  color: var(--text-2);
-}
+  /* Breadcrumbs */
+  .breadcrumbs {
+    --layout-gap: var(--size--2);
+    color: var(--text-2);
+    text-transform: uppercase;
+  }
+  .breadcrumbs .divider {
+    color: var(--surface-2);
+  }
+  .breadcrumbs li:last-child a {
+    text-decoration: none;
+  }
 
-.token.attr-name,
-.token.selector {
-  color: var(--code-primary);
-}
+  /* Meta rows (breadcrumb/source, prev/next) */
+  .doc-bar {
+    --layout-gap: var(--size-0);
+    font-size: var(--size--1);
+    text-transform: uppercase;
+  }
 
-.token.string,
-.token.number,
-.token.attr-value {
-  color: var(--code-secondary);
-}
+  /* Callouts */
+  aside.callout {
+    background-color: var(--primary--1);
+    border-left: 5px solid var(--primary-0);
+    padding: var(--size--2);
+    display: flex;
+    flex-direction: column;
+    gap: var(--size--2);
+    font-size: var(--size--1);
+    border-top-right-radius: var(--size--1);
+    border-bottom-right-radius: var(--size--1);
+  }
+  aside.callout .title {
+    color: var(--primary-0);
+    font-weight: bold;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--primary-0);
+  }
 
-.token.function,
-.token.comment,
-.token.keyword {
-  font-style: italic;
-}
+  /* small changes for responsiveness */
+  @media (max-width: 681px) {
+    nav {
+      position: initial;
+      height: auto;
+    }
+    nav ul ul {
+      display: none;
+    }
+    /* Overwrites scroll behavior and ensures growth in case main as little content */
+    main {
+      min-height: calc(100vh - 165px - var(--size-2));
+      padding: var(--size-0);
+    }
+  }
 
-table {
-  /* Table fills always the available space */
-  width: 100%;
-  border-collapse: collapse;
-  border-radius: calc(var(--p-size-0) * 0.375 * 1.3);
-}
-
-td,
-th {
-  padding: calc(0.25 * var(--p-size-0));
-  text-align: left;
-}
-
-th {
-  background: var(--text-2);
-  color: var(--surface-0);
+  /* Syntax highlighting (Prism) */
+  .token.punctuation,
+  .token.comment,
+  .token.operator {
+    color: var(--text-2);
+    font-weight: 300;
+  }
+  .token.keyword,
+  .token.tag {
+    color: var(--text-2);
+  }
+  .token.attr-name,
+  .token.selector {
+    color: var(--code-primary);
+  }
+  .token.string,
+  .token.number,
+  .token.attr-value {
+    color: var(--code-secondary);
+  }
+  .token.function,
+  .token.comment,
+  .token.keyword {
+    font-style: italic;
+  }
 }
